@@ -1,0 +1,271 @@
+{
+    "download": "تحميل الكتاب",
+    "iconDownload": "fa-solid fa-download fa-fw",
+    "all": [
+            {
+                "bock": {
+                    "url": "images/image-bock/back5.jpg",
+                    "title": "المرأة بين الأسلام و الإلحاد",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-women-between-islam-and-atheism.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/back2.jpg",
+                    "title": "الوسواس القهري",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-warkat-ela-kol-mobtla.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-2.jpeg",
+                    "title": "عيادة الملحدين",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-eiadat-almulhidin.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/back3.jpg",
+                    "title": "منكروٌ السنة",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single9/ar-monqro-alsunnah.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-18.jpeg",
+                    "title": "الهندوسية",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-hinduism.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-3.jpeg",
+                    "title": "الإسلام والإلحاد وجها لوجه",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-atheism-and-islam.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-4.jpg",
+                    "title": "رسول الأميين",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single9/ar-rasul-alumiyiyn.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-5.jpeg",
+                    "title": "كبسولات إسكات الملحدين",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-kabsulat-iiskat-almulhidin.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-6.jpeg",
+                    "title": "40 خطأ في نظرية التطور",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-khata-fi-nazariat-altatawur.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-7.jpeg",
+                    "title": "حوار حقيقي مع متنصرة - خفايا وأسرار",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-7war-haqeqy.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-8.jpeg",
+                    "title": "إما الإيمان وإما الفوضي",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-aleman-wa-elfawda.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-9.jpeg",
+                    "title": "منهج مناعة إيمانية",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-man3ah-emaniah.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-10.jpeg",
+                    "title": "الإلحاد يسمم كل شيئ",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-aliilhad-yusamim-kol-shayy.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-11.jpeg",
+                    "title": "الرد على الملحدين العرب",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-mwswet-alrd-ela-almlhdayn-alearab.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-12.jpeg",
+                    "title": "كهنة الإلحاد الجديد",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-kahnat-aliilhad.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-14.jpeg",
+                    "title": "كيف تدعو إلى الإسلام (ملحدًا - بوذيًّا - هندوسيًّا - كتابيًّا)؟",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-kayf-tad3o.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-16.jpeg",
+                    "title": "العودة إلى الإيمان",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-aleawdat-iilaa-al-iiman.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-17.jpeg",
+                    "title": "شفاء لما في الصدور",
+                    "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-shifaa.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "images/image-bock/id-1.jpg",
+                    "title": "الإلحاد الروحي وخطره على العقيدة والعقل",
+                    "src_link": "https://ia903408.us.archive.org/34/items/doctrine07001/doctrine07671.pdf"
+                }
+            }
+    ],
+    "alhadu": [
+        {
+            "bock": {
+                "url": "images/image-bock/back5.jpg",
+                "title": "المرأة بين الأسلام و الإلحاد",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-women-between-islam-and-atheism.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-2.jpeg",
+                "title": "عيادة الملحدين",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-eiadat-almulhidin.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-3.jpeg",
+                "title": "الإسلام والإلحاد وجها لوجه",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-atheism-and-islam.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-5.jpeg",
+                "title": "كبسولات إسكات الملحدين",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-kabsulat-iiskat-almulhidin.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-6.jpeg",
+                "title": "40 خطأ في نظرية التطور",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-khata-fi-nazariat-altatawur.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-10.jpeg",
+                "title": "الإلحاد يسمم كل شيئ",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-aliilhad-yusamim-kol-shayy.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-11.jpeg",
+                "title": "الرد على الملحدين العرب",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-mwswet-alrd-ela-almlhdayn-alearab.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-12.jpeg",
+                "title": "كهنة الإلحاد الجديد",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_02/ar-kahnat-aliilhad.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-1.jpg",
+                "title": "الإلحاد الروحي وخطره على العقيدة والعقل",
+                "src_link": "https://ia903408.us.archive.org/34/items/doctrine07001/doctrine07671.pdf"
+            }
+        }
+    ],
+    "eman": [
+        {
+            "bock": {
+                "url": "images/image-bock/id-4.jpg",
+                "title": "رسول الأميين",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single9/ar-rasul-alumiyiyn.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-8.jpeg",
+                "title": "إما الإيمان وإما الفوضي",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-aleman-wa-elfawda.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-9.jpeg",
+                "title": "منهج مناعة إيمانية",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-man3ah-emaniah.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-16.jpeg",
+                "title": "العودة إلى الإيمان",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-aleawdat-iilaa-al-iiman.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-17.jpeg",
+                "title": "شفاء لما في الصدور",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-shifaa.pdf"
+            }
+        }
+    ],
+    "cover": [
+        {
+            "bock": {
+                "url": "images/image-bock/id-14.jpeg",
+                "title": "كيف تدعو إلى الإسلام (ملحدًا - بوذيًّا - هندوسيًّا - كتابيًّا)؟",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-kayf-tad3o.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-7.jpeg",
+                "title": "حوار حقيقي مع متنصرة - خفايا وأسرار",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-7war-haqeqy.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/id-18.jpeg",
+                "title": "الهندوسية",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single_010/ar-hinduism.pdf"
+            }
+        },
+        {
+            "bock": {
+                "url": "images/image-bock/back3.jpg",
+                "title": "منكروٌ السنة",
+                "src_link": "https://d1.islamhouse.com/data/ar/ih_books/single9/ar-monqro-alsunnah.pdf"
+            }
+        }
+    ]
+}

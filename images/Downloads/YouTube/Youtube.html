@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-family: "Roboto", "Arial", sans-serif;
+      }
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        padding: 0 16px;
+      }
+      /* Left Section */
+      .left-section {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+      .left-section .logo:hover .right-section {
+        display: flex;
+      }
+      .left-section img {
+        width: 46%;
+        padding-left: 16px;
+      }
+      @media (max-width: 767px) {
+        .left-section img {
+          width: 65%;
+        }
+      }
+      /* Center Section */
+      .center-section {
+        display: flex;
+        align-items: center;
+        margin-left: -9px;
+      }
+      .center-section form {
+        display: flex;
+        height: 40px;
+        width: 628px;
+      }
+      @media (max-width: 767px) {
+        header .center-section form {
+          height: 30px;
+          width: 200px;
+        }
+      }
+      .center-section input {
+        width: 100%;
+        border-radius: 2px 0 0 2px;
+        padding: 12px;
+        font-size: 1.6rem;
+        border: 1px solid #d3d3d3;
+        border-right: none;
+      }
+      .center-section button {
+        width: 64px;
+        border: 1px solid #d3d3d3;
+        border-radius: 0 2px 2px 0;
+        border-top: 4px;
+        background-color: #f8f8f8;
+        cursor: pointer;
+      }
+      @media (max-width: 767px) {
+        .center-section button {
+          height: 30px;
+        }
+      }
+      .center-section button:hover {
+        border-color: #c6c6c6;
+        background-color: #f0f0f0;
+      }
+      .center-section .mic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      /* Right Section */
+      .right-section a {
+        text-decoration: none;
+        color: black;
+        margin-right: 18px;
+      }
+      @media (max-width: 767px) {
+        .right-section a {
+          display: none;
+        }
+      }
+      /* Header Content Area */
+      .content-area {
+        display: flex;
+        height: calc(100vh - 56px);
+        background-color: #f9f9f9;
+      }
+      /* Aside */
+      aside {
+        height: 100%;
+        width: 280px;
+        background-color: white;
+        overflow-y: auto;
+      }
+      @media (max-width: 767px) {
+        aside {
+          display: none;
+        }
+      }
+      /* Nav */
+      nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        text-decoration: none;
+        color: black;
+      }
+      .nav-link:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      .nav-link span {
+        margin-left: 24px;
+        font-size: 1.4rem;
+        line-height: 2em;
+        font-weight: 400;
+        color: #030303;
+      }
+      .active {
+        background-color: #e5e5e5;
+      }
+      #active {
+        font-weight: 500;
+      }
+      hr {
+        height: 1px;
+        background-color: #e5e5e5;
+        border: none;
+        margin: 10px 0;
+      }
+      nav p {
+        font-size: 1.4rem;
+        color: #606060;
+        font-weight: 500;
+        padding: 8px 16px;
+        text-transform: uppercase;
+      }
+      nav #channel-img {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+        padding: 35px 15px;
+        border-top: 1px solid #ddd;
+        overflow-y: auto;
+      }
+      .videos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+      }
+      .video {
+        width: 330px;
+        margin-bottom: 40px;
+        cursor: pointer;
+      }
+      .thumbnail {
+        width: 100%;
+        height: 187px;
+        margin-bottom: 12px;
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+      }
+      .video-details {
+        display: flex;
+      }
+      .creat-img img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+      }
+      .title a {
+        text-decoration: none;
+      }
+      .video-title {
+        color: rgb(3, 3, 3);
+        font-size: 1.6rem;
+        max-width: 278px;
+        font-weight: 500;
+        line-height: 2.2rem;
+        margin-bottom: 4px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .video-creator,
+      .title span {
+        color: rgb(96, 96, 96);
+        font-size: 1.4rem;
+        line-height: 2rem;
+        font-weight: 400;
+      }
+      .video-creator:hover {
+        color: black;
+      }
+    </style>
+    <title>YouTube</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Left Section -->
+      <div class="left-section">
+        <i class="material-icons logo">menu</i>
+        <img src="images/youtube-logo.png" alt="" />
+      </div>
+      <!-- Center Section-->
+      <div class="center-section">
+        <form action="">
+          <input type="text" placeholder="Search" />
+          <button><i class="material-icons">search</i></button>
+        </form>
+        <i class="material-icons mic">mic</i>
+      </div>
+      <!-- Right Section-->
+      <div class="right-section">
+        <a href=""><i class="material-icons">video_call</i></a>
+        <a href=""><i class="material-icons">apps</i></a>
+        <a href=""><i class="material-icons">notifications</i></a>
+        <a href=""><i class="material-icons">account_circle</i></a>
+      </div>
+      <!-- Header Content Area -->
+    </header>
+    <div class="content-area">
+      <aside>
+        <nav>
+          <a href="#" class="nav-link active">
+            <i class="material-icons">home</i>
+            <span id="active-span">Home</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">explore</i>
+            <span>Explore</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">subscriptions</i>
+            <span>Subscriptions</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">ondemand_video</i>
+            <span>Originals</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons">play_circle_outline</i>
+            <span>YouTube Music</span>
+          </a>
+          <hr />
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">video_library</i>
+            <span>Library</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons">history</i>
+            <span>History</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">smart_display</i>
+            <span>Your Videos</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">watch_later</i>
+            <span>watch later</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">download</i>
+            <span>Downloads</span>
+          </a>
+          <a href="#" class="nav-link">
+            <i class="material-icons-outlined">thumb_up</i>
+            <span>Liked Videos</span>
+          </a>
+          <hr />
+          <p>subscriptions</p>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+          <a href="#" class="nav-link">
+            <img id="channel-img" src="images/profail.jpg" />
+            <span>Abdo Ali</span>
+          </a>
+        </nav>
+      </aside>
+      <main>
+        <div class="videos-container">
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/_-eh8cwGGwg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/Tamplat-1.png" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a href="#" class="video-title">
+                  مين ده اللي فاكر نفسه Inffluencer
+                </a>
+                <a href="#" class="video-creator"> Abdo Ali </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/profail.jpg" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=QBllZ0D3Ekk"
+                  class="video-title"
+                >
+                  انا مسلم
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=QBllZ0D3Ekk"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>11M Views . 2 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/Abdo.png" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=0KGQlNWrQvQ&t=82s"
+                  class="video-title"
+                >
+                  عملت الويب سايت الخاص بيه اتفرج عليه
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=0KGQlNWrQvQ&t=82s"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>20M Views . 5 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/video7.jpeg" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=QBllZ0D3Ekk"
+                  class="video-title"
+                >
+                  !انا مسلم
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=QBllZ0D3Ekk"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/video8.jpeg" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a href="" class="video-title">
+                  مين ده اللي فاكر نفسه Inffluencer
+                </a>
+                <a href="" class="video-creator"> Abdo Ali </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/video9.jpeg" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=ToMJHm_ptPo"
+                  class="video-title"
+                >
+                  PALESTINE - a message to the WEST! 🇵🇸
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=ToMJHm_ptPo"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/video2.jpeg" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=1vh3Gx5B0Ck"
+                  class="video-title"
+                >
+                  ٣٦٥ يوم بدون فيسبوك
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=1vh3Gx5B0Ck"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/aaaa.png" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=BVe7WwdXn9c"
+                  class="video-title"
+                >
+                  تعلم أزاي تأمن علي حمامك في الشتاء
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=BVe7WwdXn9c"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>5M Views . 7 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/فرجة علي الزغاليل.png" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=n0lcimOpTsU"
+                  class="video-title"
+                >
+                  فرجة علي الزغاليل
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=n0lcimOpTsU"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>7M Views . 9 Months</span>
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="images/زغلول.png" alt="" />
+            </div>
+            <div class="video-details">
+              <div class="creat-img">
+                <img src="images/profail.jpg" alt="Abdo Ali" />
+              </div>
+              <div class="title">
+                <a
+                  href="https://www.youtube.com/watch?v=dwF3pqWZOpE"
+                  class="video-title"
+                >
+                  اتفرج علي الزغلول وهو لسه طالع من البيضة
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=dwF3pqWZOpE"
+                  class="video-creator"
+                >
+                  Abdo Ali
+                </a>
+                <span>10M Views . 3 Months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
