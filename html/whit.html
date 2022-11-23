@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>من نحن</title>
-    <link rel="stylesheet" href="../css/white.css" />
+    <title>الموقع الرسمي للدكتور هيثم طلعت</title>
+    <!-- Mine Css -->
+    <link rel="stylesheet" href="../css/style.css" />
     <!-- Normalize -->
-    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
     <!-- font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +18,78 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* End Header */
+.parent {
+    height: calc(100vh - 126px);
+    padding: 15px;
+}
+.parent .pa {
+    color: #2196f3;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: right;
+}
+.parent .an{
+    padding: 30px;
+    line-height: 1.6;
+}
+/* Start Footer */
+footer {
+    background-color: var(--mane-color);
+}
+footer .foot {
+    margin: 0 50px;
+    padding: 10px;
+}
+footer .box {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+footer .box a i {
+    color: white;
+    font-size: 25px;
+}
+footer .box a {
+    margin-left: 50px;
+}
+footer .box a i:hover {
+    color: red;
+    transform: scale(1.6);
+}
+footer .foot {
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-text p {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+footer .social-icon {
+    display: flex;
+}
+@media (max-width: 767px) {
+    footer .foot {
+        display: block;
+    }
+}
+@media (max-width: 767px) {
+    footer .social-icon {
+        justify-content: space-around;
+        margin: 20px 0px 0px -40px;
+    }
+}
+@media (max-width: 767px) {
+    footer .footer-text p {
+        font-size: 16px;
+        text-align: center;
+        margin: 0 auto 15px;
+    }
+}
+/* End Footer */
+    </style>
   </head>
   <body onscroll="scrollToTop()">
     <!-- Start Header -->
@@ -24,13 +97,13 @@
       <div class="container">
         <div class="head">
           <div class="logo">
-            <a href="index.html">
+            <a href="../index.html">
               <h3>هيثم طلعت</h3>
             </a>
           </div>
           <nav>
             <ul>
-              <li><a href="index.html" class="active">الرئيسية</a></li>
+              <li><a href="../index.html" class="active">الرئيسية</a></li>
             </ul>
           </nav>
         </div>

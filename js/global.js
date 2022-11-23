@@ -44,7 +44,6 @@ export function footer() {
     </div>`
 document.getElementById("year").innerHTML = new Date().getFullYear();
 }
-
 // Navigation
 export function navigation(home, visuals, bock, whit, english) {
   // Document Object Model
@@ -71,11 +70,12 @@ export function navigation(home, visuals, bock, whit, english) {
   let a3 = document.createElement("a");
   let a4 = document.createElement("a");
   let a5 = document.createElement("a");
+  a1.className = "active";
   let links = [a1, a2, a3, a4, a5];
   links.forEach(ele => ele.style.cssText = "color: black; font-size: 30px");
   links.forEach((ele) => {
-    ele.style.cssText = "color: black; font-size: 30px";
     ele.onclick = activeFunction;
+    ele.style.cssText = "color: black; font-size: 30px";
   })
   // hred Links
   a1.href = home;

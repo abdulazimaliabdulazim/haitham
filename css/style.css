@@ -350,6 +350,11 @@ article.articles .container ul.filter li.active {
     background-color: var(--mane-color-alt);
 
 }
+.active {
+    padding: 15px;
+    background-color: var(--mane-color);
+    color: white;
+}
 article.articles .container .bocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

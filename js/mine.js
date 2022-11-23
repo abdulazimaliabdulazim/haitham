@@ -3,7 +3,7 @@ scrollToTop();
 header("index.html", "#visuals", "#bock", "#", "html/indexEng.html");
 footer();
 activeFunction();
-navigation('index.html', '#visuals', '#bock', 'html/whit.htm', 'html/indexEng.html');
+navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html');
 
 // (Page Mine)
 // Json Bocks
@@ -101,7 +101,7 @@ myJsonFilter.onreadystatechange = function () {
 };
 
 // // Scroll Video
-let boxAll = document.querySelector("main.visuals .box-all");
+let boxAll = document.querySelector(".box-all");
 
 // Scroll Video Left
 function scrollVideo_L() {
