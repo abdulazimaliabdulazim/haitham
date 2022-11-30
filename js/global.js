@@ -4,7 +4,7 @@ export function header(home, visuals, bock, article, english) {
   `<div class="container">
   <div class="head">
      <div class="logo">
-         <a href="index.html">
+         <a href='${home}'>
          <h3><span class="hitham">هيثم</span> <span class="talm">طلعت</span></h3>
          </a>
      </div>

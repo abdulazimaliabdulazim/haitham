@@ -36,6 +36,10 @@ ul {
     margin-right: auto;
     overflow: hidden;
 }
+.active {
+    padding: 15px;
+    background-color: var(--mane-color);
+}
 /* Small */
 @media (min-width: 768px) {
     .container {

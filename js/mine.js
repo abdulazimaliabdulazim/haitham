@@ -17,90 +17,46 @@ myJsonFilter.onreadystatechange = function () {
     let responseTextMyJson = JSON.parse(this.responseText);
     filt[0].innerHTML += ` ( ${responseTextMyJson.all.length})`;
     for (let i = 0; i < responseTextMyJson.all.length; i++) {
-      // Container
-      const parent = document.createElement("div");
-      const parentText = document.createElement("div");
-      parent.className = "bock";
-      parentText.className = "text";
-      // Image
-      const ima = document.createElement("div");
-      const imgUrl = document.createElement("img");
-      ima.className = "images";
-      imgUrl.src = `${responseTextMyJson.all[i].bock.url}`;
-      ima.appendChild(imgUrl);
-      parent.appendChild(ima);
-      // Paraghraph
-      const paragraph = document.createElement("p");
-      const paragraphTitle = document.createTextNode(
-        responseTextMyJson.all[i].bock.title
-      );
-      paragraph.appendChild(paragraphTitle);
-      parentText.appendChild(paragraph);
-      // Link Href
-      const scrLink = document.createElement("a");
-      scrLink.className = "download";
-      scrLink.target = "_blank";
-      const scrLinkText = document.createTextNode(responseTextMyJson.download);
-      scrLink.appendChild(scrLinkText);
-      scrLink.href = `${responseTextMyJson.all[i].bock.src_link}`;
-      // Downolad Icon
-      let iconDownload = document.createElement("i");
-      iconDownload.className = responseTextMyJson.iconDownload;
-      scrLink.append(iconDownload);
-      // Append Child
-      parentText.appendChild(scrLink);
-      parent.appendChild(parentText);
-      bocks.appendChild(parent);
+      bocks.innerHTML +=
+        `<div class="bock">
+        <div class="images">
+          <img src="${responseTextMyJson.all[i].bock.url}">
+        </div>
+        <div class="text">
+          <p>"${responseTextMyJson.all[i].bock.title}"</p>
+          <a class="download" href="${responseTextMyJson.all[i].bock.src_link}" target="_blanck">
+            "${responseTextMyJson.download}"
+            <i class="${responseTextMyJson.iconDownload}"></i>
+          </a>
+        </div>
+        </div>`;
     }
     filt.forEach((ele) => {
       ele.addEventListener("click", (e) => {
-        filt.forEach((ele) => {
-          ele.classList.remove("active");
-        });
+        filt.forEach(ele => ele.classList.remove("active"));
         e.currentTarget.classList.add("active");
         bocks.innerHTML = "";
         for (let i = 0; i < responseTextMyJson[`${ele.id}`].length; i++) {
-          // Container
-          const parent = document.createElement("div");
-          const parentText = document.createElement("div");
-          parent.className = "bock";
-          parentText.className = "text";
-          // Image
-          const ima = document.createElement("div");
-          const imgUrl = document.createElement("img");
-          ima.className = "images";
-          imgUrl.src = responseTextMyJson[`${ele.id}`][i].bock.url;
-          ima.appendChild(imgUrl);
-          parent.appendChild(ima);
-          // Paraghraph
-          const paragraph = document.createElement("p");
-          const paragraphTitle = document.createTextNode(
-            responseTextMyJson[`${ele.id}`][i].bock.title
-          );
-          paragraph.appendChild(paragraphTitle);
-          parentText.appendChild(paragraph);
-          // Link Href
-          const scrLink = document.createElement("a");
-          scrLink.className = "download";
-          scrLink.target = "_blank";
-          const scrLinkText = document.createTextNode(responseTextMyJson.download);
-          scrLink.appendChild(scrLinkText);
-          scrLink.href = `${responseTextMyJson[`${ele.id}`][i].bock.src_link}`;
-          // Downolad Icon
-          let iconDownload = document.createElement("i");
-          iconDownload.className = responseTextMyJson.iconDownload;
-          scrLink.append(iconDownload);
-          // Append Child
-          parentText.appendChild(scrLink);
-          parent.appendChild(parentText);
-          bocks.appendChild(parent);
+          bocks.innerHTML +=
+            `<div class="bock">
+            <div class="images">
+              <img src="${responseTextMyJson[`${ele.id}`][i].bock.url}">
+            </div>
+            <div class="text">
+              <p>"${responseTextMyJson[`${ele.id}`][i].bock.title}"</p>
+              <a class="download" href="${responseTextMyJson[`${ele.id}`][i].bock.src_link}" target="_blanck">
+                "${responseTextMyJson.download}"
+                <i class="${responseTextMyJson.iconDownload}"></i>
+              </a>
+            </div>
+            </div>`;
         }
       });
     })
   }
 };
 
-// // Scroll Video
+// Scroll Video
 let boxAll = document.querySelector(".box-all");
 
 // Scroll Video Left
@@ -111,6 +67,7 @@ function scrollVideo_L() {
 function scrollVideo_R() {
   boxAll.style.transform += `translateX(100px)`;
 }
+
 // Videos Mine
 async function getVideo(apiLink) {
   try {

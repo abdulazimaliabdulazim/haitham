@@ -39,6 +39,10 @@ ul {
     margin-right: auto;
     overflow: hidden;
 }
+.active {
+    padding: 15px;
+    background-color: var(--mane-color);
+}
 /* Small */
 @media (min-width: 768px) {
     .container {
@@ -57,6 +61,8 @@ ul {
         width: 1170px;
     }
 }
+/* End Global Rules */
+
 /* Start Animation */
 @keyframes left-move {
     50% {
@@ -85,8 +91,6 @@ ul {
     }
 }
 /* End Animation */
-
-/* End Global Rules */
 
 /* Start Framework */
 .main-title {
@@ -135,7 +139,7 @@ ul {
 /* End Framework */
 
 /* Start Header */
-/* Start navigation */
+/* Start Navigation */
 header .container .fa-align-left {
     position: absolute;
     left: 20px; top: 15px;
@@ -152,10 +156,7 @@ header .container .fa-align-left {
         display: none;
     }
 }
-.active {
-    color: var(--mane-color);
-}
-/* End navigation */
+/* End Navigation */
 header {
     background-color: #00539c9c;
     width: 100%;
@@ -166,6 +167,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 .head .logo {
     display: flex;
@@ -178,6 +180,7 @@ header {
 }
 .head nav ul {
     display: flex;
+    
 }
 .head nav ul li a {
     color: wheat;
@@ -185,6 +188,7 @@ header {
     font-size: 20px;
     font-weight: bold;
     position: relative;
+    
 }
 .head nav ul li a:hover::before {
     content: "";
@@ -234,6 +238,12 @@ section::before {
     height: 100%;
     background-color: #00000002;
     z-index: -1;
+}
+section .container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 section h1 {
     text-align: center;
@@ -301,7 +311,6 @@ main.visuals .box-all {
     text-shadow: 0px 0px 20px;
     color: var(--mane-color);
 }
-
 @media (min-width: 1200px) {
     .visuals .container {
         width: 90%;
@@ -332,7 +341,7 @@ article.articles {
 article.articles .container ul.filter {
     display: flex;
     justify-content: space-around;
-    
+    background-color: #00539c9c;
 }
 article.articles .container ul.filter li {
     width: 20%;
@@ -341,19 +350,8 @@ article.articles .container ul.filter li {
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    color: var(--mane-color);
-    background-color: #cccccc7a;
-    border-radius: 10px;
-}
-article.articles .container ul.filter li:hover,
-article.articles .container ul.filter li.active {
-    background-color: var(--mane-color-alt);
-
-}
-.active {
-    padding: 15px;
-    background-color: var(--mane-color);
     color: white;
+    border-radius: 10px;
 }
 article.articles .container .bocks {
     display: grid;
@@ -376,8 +374,12 @@ article.articles .container .bocks .bock .images img {
     height: 80%;
 }
 article.articles .container .bocks .bock .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 200px;
-    min-height: 120px;
+    min-height: 155px;
     margin-top: -75px;
     background-color: white;
     padding: 10px;
