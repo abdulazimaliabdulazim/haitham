@@ -19,12 +19,13 @@ async function getVideo(apiLink) {
     console.log("Good");
   }
 }
+
 getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`).then((result) => {
-  for (let ele = 0; ele <= result.length; ele++) {
+  for (let i = 0; i <= result.length; i++) {
     let box = document.createElement("div");
     box.className = "box";
     let createP = document.createElement("p");
-    let repoNameAll = document.createTextNode(result[ele].snippet.title);
+    let repoNameAll = document.createTextNode(result[i].snippet.title);
     createP.appendChild(repoNameAll);
     box.appendChild(createP);
     videos.appendChild(box);
@@ -32,13 +33,14 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
       `<iframe
         width="100%"
         height="170"
-        src="https://www.youtube.com/embed/${result[ele].id.videoId}?rel=0"
-        title="${result[ele].snippet.title}" frameborder="0"allow="accelerometer;
+        src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
+        title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
         autoplay; clipboard-write; encrypted-media;
         gyroscope; picture-in-picture"allowfullscreen>
       </iframe>`;
-  }  
+  };
 });
+
 
 viId.forEach((ele) => {
   ele.addEventListener("click", (e) => {
@@ -48,24 +50,33 @@ viId.forEach((ele) => {
     });
     e.currentTarget.classList.add("active");
     getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`).then((result) => {
-        for (let i = 0; i <= result.length; i++) {
-          let box = document.createElement("div");
-          box.className = "box";
-          let createP = document.createElement("p");
-          let repoNameAll = document.createTextNode(result[i].snippet.title);
-          createP.appendChild(repoNameAll);
-          box.appendChild(createP);
-          videos.appendChild(box);
-          box.innerHTML +=
-            `<iframe
-              width="100%"
-              height="170"
-              src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
-              title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
-              autoplay; clipboard-write; encrypted-media;
-              gyroscope; picture-in-picture"allowfullscreen>
-            </iframe>`;
-        }  
+      for (let i = 0; i <= result.length; i++) {
+        let box = document.createElement("div");
+        box.className = "box";
+        let createP = document.createElement("p");
+        let repoNameAll = document.createTextNode(result[i].snippet.title);
+        createP.appendChild(repoNameAll);
+        box.appendChild(createP);
+        videos.appendChild(box);
+        box.innerHTML +=
+          `<iframe
+            width="100%"
+            height="170"
+            src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
+            title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
+            autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture"allowfullscreen>
+          </iframe>`;
+      };
     });
-    })
-})
+  });
+});
+
+
+
+
+
+
+
+
+

@@ -268,11 +268,11 @@ header {
     border-top-right-radius: 5px;
     border: 1px solid #0000002b;
 }
-.visuals .box-all .videos .box p:hover {
+/* .visuals .box-all .videos .box p:hover {
     height: auto;
     word-break: normal;
     white-space: normal;
-}
+} */
 
 .info {
     position: relative;

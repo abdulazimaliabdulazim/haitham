@@ -40,7 +40,7 @@ ul {
     overflow: hidden;
 }
 .active {
-    padding: 15px;
+    padding: 15px 0;
     background-color: var(--mane-color);
 }
 /* Small */
