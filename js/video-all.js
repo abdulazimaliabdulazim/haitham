@@ -1,13 +1,10 @@
-import {scrollToTop, footer, activeFunction, header, navigation} from "./global.js";
+import {header, activeFunction, footer, navigation} from "./global.js";
 header('../index.html', "../#visuals", "../#bock", "../#", "../html/indexEng.html")
-scrollToTop();
 footer();
 navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../html/indexEng.html');
 activeFunction();
 
 // Videos Counte
-let videos = document.querySelector(".videos");
-let viId = document.querySelectorAll(".visuals .box-all .box");
 async function getVideo(apiLink) {
   try {
     let result = await fetch(apiLink);
@@ -20,10 +17,13 @@ async function getVideo(apiLink) {
   }
 }
 
+let videos = document.querySelector(".videos");
+let viId = document.querySelectorAll(".visuals .box-all .box");
+
 getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`).then((result) => {
   for (let i = 0; i <= result.length; i++) {
-    let box = document.createElement("div");
-    box.className = "box";
+    let box = document.createElement("div"); 
+    box.className = "box"; 
     let createP = document.createElement("p");
     let repoNameAll = document.createTextNode(result[i].snippet.title);
     createP.appendChild(repoNameAll);
@@ -41,17 +41,14 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
   };
 });
 
-
 viId.forEach((ele) => {
   ele.addEventListener("click", (e) => {
     videos.innerHTML = "";
-    viId.forEach((e) => {
-      e.classList.remove("active");
-    });
+    viId.forEach(e => e.classList.remove("active"));
     e.currentTarget.classList.add("active");
     getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`).then((result) => {
       for (let i = 0; i <= result.length; i++) {
-        let box = document.createElement("div");
+        let box = document.createElement("div"); 
         box.className = "box";
         let createP = document.createElement("p");
         let repoNameAll = document.createTextNode(result[i].snippet.title);

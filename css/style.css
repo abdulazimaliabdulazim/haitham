@@ -239,16 +239,10 @@ section::before {
     background-color: #00000002;
     z-index: -1;
 }
-section .container {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 section h1 {
     text-align: center;
     color: var(--mane-color);
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 25px 0 0;
 }
 section p {
@@ -441,6 +435,44 @@ article.articles .container .bocks .bock .text a.download:hover {
         gap: 20px;
     }
 }
+/* Start Language */
+.langw {
+    position: absolute;
+    top: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.langw ul {
+    width: 105px;
+    background-color: #eee;
+    overflow: auto;    
+}
+.langw ul h3 {
+    width: 105px;
+    z-index: 100;
+    color: white;
+    background-color: var(--mane-color);
+    position: absolute;
+    top: -18px;
+    text-align: center;
+    cursor: pointer;
+    height: 24px;
+}
+.langw ul li {
+    position: absolute;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 10px;
+    cursor: pointer;
+    margin: 5px 0;
+    display: none;
+}
+.langw ul:hover li {
+    position: relative;
+    top: 33px;
+    display: block;
+}
+/* End Language */
 /* End Bock */
 
 /* Start Footer */

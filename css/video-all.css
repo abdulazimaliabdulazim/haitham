@@ -239,8 +239,10 @@ header {
 
 /* Start Video */
 .visuals {
+    max-width: 100%;
     margin-top: calc(var(--margin-top) + 30px);
     margin-bottom: var(--margin-bottom);
+    overflow-x: hidden;
 }
 .visuals .box-all {
     display: flex;
@@ -268,15 +270,16 @@ header {
     border-top-right-radius: 5px;
     border: 1px solid #0000002b;
 }
-/* .visuals .box-all .videos .box p:hover {
+.visuals .box-all .videos .box p:hover {
     height: auto;
     word-break: normal;
     white-space: normal;
-} */
+}
 
 .info {
     position: relative;
     padding: 20px 20px 0 0;
+    cursor: pointer;
 }
 .info h3 {
     color: var(--mane-color);
@@ -291,8 +294,17 @@ header {
     border-radius: 10px;
     transition: 0.5s;
 }
-.info .box:not(.active) {
-    filter: blur(1px);
+.info .box:hover,
+.info .active {
+    background-color: var(--mane-color);
+}
+.info .box img {
+    width: 40px;
+    border-radius: 5px;
+}
+.info .box label {
+    cursor: pointer;
+    color: var(--mane-color-alt);
 }
 @media (max-width: 767px) {
     .info {
@@ -308,19 +320,6 @@ header {
     .info::before {
         left: 0;
     }
-}
-.info .box:hover,
-.info .active {
-    background-color: var(--mane-color);
-}
-.info .box img {
-    width: 40px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.info .box label {
-    cursor: pointer;
-    color: var(--mane-color-alt);
 }
 /* End Video */
 

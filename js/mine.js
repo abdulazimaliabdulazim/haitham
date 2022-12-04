@@ -9,6 +9,7 @@ navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.h
 // Json Bocks
 let bocks = document.querySelector("article.articles .container .bocks");
 const filt = document.querySelectorAll(".articles .container .filter li");
+
 let myJsonFilter = new XMLHttpRequest();
 myJsonFilter.open("GET", "json/bock.json");
 myJsonFilter.send();
@@ -52,7 +53,7 @@ myJsonFilter.onreadystatechange = function () {
             </div>`;
         }
       });
-    })
+    });
   }
 };
 
