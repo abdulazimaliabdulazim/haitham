@@ -16,20 +16,20 @@ myJsonFilter.send();
 myJsonFilter.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let responseTextMyJson = JSON.parse(this.responseText);
-    filt[0].innerHTML += ` ( ${responseTextMyJson.all.length})`;
-    for (let i = 0; i < responseTextMyJson.all.length; i++) {
+    filt[0].innerHTML += ` ( ${responseTextMyJson.arbic.all.length})`;
+    for (let i = 0; i < responseTextMyJson.arbic.all.length; i++) {
       bocks.innerHTML +=
         `<div class="bock">
-        <div class="images">
-          <img src="${responseTextMyJson.all[i].bock.url}">
-        </div>
-        <div class="text">
-          <p>"${responseTextMyJson.all[i].bock.title}"</p>
-          <a class="download" href="${responseTextMyJson.all[i].bock.src_link}" target="_blanck">
-            "${responseTextMyJson.download}"
-            <i class="${responseTextMyJson.iconDownload}"></i>
-          </a>
-        </div>
+          <div class="images">
+            <img src="${responseTextMyJson.arbic.all[i].bock.url}">
+          </div>
+          <div class="text">
+            <p>"${responseTextMyJson.arbic.all[i].bock.title}"</p>
+            <a class="download" href="${responseTextMyJson.arbic.all[i].bock.src_link}" target="_blanck">
+              "${responseTextMyJson.download}"
+              <i class="${responseTextMyJson.iconDownload}"></i>
+            </a>
+          </div>
         </div>`;
     }
     filt.forEach((ele) => {
@@ -37,15 +37,15 @@ myJsonFilter.onreadystatechange = function () {
         filt.forEach(ele => ele.classList.remove("active"));
         e.currentTarget.classList.add("active");
         bocks.innerHTML = "";
-        for (let i = 0; i < responseTextMyJson[`${ele.id}`].length; i++) {
+        for (let i = 0; i < responseTextMyJson.arbic[`${ele.id}`].length; i++) {
           bocks.innerHTML +=
             `<div class="bock">
             <div class="images">
-              <img src="${responseTextMyJson[`${ele.id}`][i].bock.url}">
+              <img src="${responseTextMyJson.arbic[`${ele.id}`][i].bock.url}">
             </div>
             <div class="text">
-              <p>"${responseTextMyJson[`${ele.id}`][i].bock.title}"</p>
-              <a class="download" href="${responseTextMyJson[`${ele.id}`][i].bock.src_link}" target="_blanck">
+              <p>"${responseTextMyJson.arbic[`${ele.id}`][i].bock.title}"</p>
+              <a class="download" href="${responseTextMyJson.arbic[`${ele.id}`][i].bock.src_link}" target="_blanck">
                 "${responseTextMyJson.download}"
                 <i class="${responseTextMyJson.iconDownload}"></i>
               </a>
@@ -56,6 +56,44 @@ myJsonFilter.onreadystatechange = function () {
     });
   }
 };
+
+const langw = document.querySelectorAll(".langw ul li");
+let noneLiFilter = [filt[1], filt[2], filt[3]];
+let myJsonLangw = new XMLHttpRequest();
+myJsonLangw.open("GET", "json/bock.json");
+myJsonLangw.send();
+myJsonLangw.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    let responseTextMyJson = JSON.parse(this.responseText);
+    langw.forEach((ele) => {
+      ele.addEventListener("click", (e) => {
+        langw.forEach(ele => ele.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+        bocks.innerHTML = "";
+        ele.id != "arbic" ? noneLiFilter.forEach(ele => ele.style.display = "none") : noneLiFilter.forEach(ele => ele.style.display = "block");
+        if (ele.id != "arbic") {
+          noneLiFilter.forEach(ele => ele.style.display = "none");
+        }
+        for (let i = 0; i < responseTextMyJson.langw[`${ele.id}`].length; i++) {
+          bocks.innerHTML +=
+            `<div class="bock">
+            <div class="images">
+              <img src="${responseTextMyJson.langw[`${ele.id}`][i].bock.url}">
+            </div>
+            <div class="text">
+              <p>"${responseTextMyJson.langw[`${ele.id}`][i].bock.title}"</p>
+              <a class="download" href="${responseTextMyJson.langw[`${ele.id}`][i].bock.src_link}" target="_blanck">
+                "${responseTextMyJson.download}"
+                <i class="${responseTextMyJson.iconDownload}"></i>
+              </a>
+            </div>
+            </div>`;
+        }
+      });
+    });
+  }
+};
+
 
 // Scroll Video
 let boxAll = document.querySelector(".box-all");
@@ -100,3 +138,12 @@ getVideo(
     boxAll.appendChild(boxAllTest);
   }
 });
+
+
+function newProduct(bocks) {
+  let newProduct = document.createElement("div");
+  newProduct.className = "newProduct";
+  let textNewProduct = document.createTextNode("جديد");
+  newProduct.appendChild(textNewProduct);
+  bocks.appendChild(newProduct);
+}

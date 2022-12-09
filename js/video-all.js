@@ -31,7 +31,7 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
     videos.appendChild(box);
     box.innerHTML +=
       `<iframe
-        width="100%"
+        width="95%"
         height="170"
         src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
         title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
@@ -57,7 +57,7 @@ viId.forEach((ele) => {
         videos.appendChild(box);
         box.innerHTML +=
           `<iframe
-            width="100%"
+            width="95%"
             height="170"
             src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
             title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
@@ -68,12 +68,3 @@ viId.forEach((ele) => {
     });
   });
 });
-
-
-
-
-
-
-
-
-
