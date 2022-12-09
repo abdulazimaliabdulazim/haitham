@@ -94,19 +94,6 @@ myJsonLangw.onreadystatechange = function () {
   }
 };
 
-
-// Scroll Video
-let boxAll = document.querySelector(".box-all");
-
-// Scroll Video Left
-function scrollVideo_L() {
-  boxAll.style.transform += `translateX(-100px)`;
-}
-// Scroll Video Right
-function scrollVideo_R() {
-  boxAll.style.transform += `translateX(100px)`;
-}
-
 // Videos Mine
 async function getVideo(apiLink) {
   try {
@@ -127,7 +114,6 @@ getVideo(
     let boxAllTest = document.createElement("div");
     boxAllTest.className = "box";
     boxAllTest.style.margin = "10px";
-
     boxAllTest.innerHTML = 
     `<iframe
         src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
@@ -138,6 +124,18 @@ getVideo(
     boxAll.appendChild(boxAllTest);
   }
 });
+
+// Scroll Video
+let boxAll = document.querySelector(".box-all");
+
+// Scroll Video Left
+function scrollVideo_L() {
+  boxAll.style.transform += `translateX(-100px)`;
+}
+// Scroll Video Right
+function scrollVideo_R() {
+  boxAll.style.transform += `translateX(100px)`;
+}
 
 
 function newProduct(bocks) {

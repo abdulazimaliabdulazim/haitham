@@ -265,17 +265,11 @@ section p .sp {
         display: none;
     }   
 }
-@media (max-width: 992px) {
+@media (min-width: 769px) {
     section .infromition-show {
-        display: none;
-    }   
-}
-@media (min-width: 992px) {
-    section .infromition-show {
-        width: 100%;
         position: relative;
+        width: 100%;
         display: flex;
-        bottom: -75px;
     }
     section .infromition-show .data {
         display: flex;
@@ -303,7 +297,6 @@ section p .sp {
         border: 5px solid white;
         outline: 2px solid #00000012;
         position: absolute;
-        /* bottom: 10px; */
     }
 }
 /* End Section */
@@ -542,21 +535,6 @@ article.articles .container .bocks .bock .text a.download:hover {
 }
 /* End Language */
 /* End Bock */
-
-/* Start Footer */
-footer {
-    background-color: var(--mane-color);
-}
-footer p {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.6;
-    margin: 0;
-    padding: 10px 0;
-}
-/* End Footer */
 
 /* Start Social Media */
 .social-icon {

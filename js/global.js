@@ -35,14 +35,28 @@ export function header(home, visuals, bock, article, english) {
 }
 // Components Footer
 export function footer() {
-  document.querySelector("footer").innerHTML =
-    `<div class="container">
-      <p>
-        حقوق الطبع محفوظة <br>
-        <span id="year"></span> النسخة التجريبية المؤقتة الاصدار 2.0
-      </p>
-    </div>`
-document.getElementById("year").innerHTML = new Date().getFullYear();
+    let containerDiv = document.createElement("div");
+    containerDiv.className = "container";
+    // Text One
+    let p = document.createElement("p");
+    let text = document.createTextNode("حقوق الطبع محفوظة ");
+    p.style.cssText = "color: white;font-size: 20px;font-weight: bold;text-align: center;line-height: 1.6;margin: 0;padding: 10px 0";
+    p.appendChild(text);
+    // Span Year
+    let span = document.createElement("span");
+    let year = document.createTextNode(new Date().getFullYear());
+    span.appendChild(year);
+    // Br
+    let br = document.createElement("br");
+    p.append(br);
+    p.append(span);
+    // Text Two
+    let text2 = document.createTextNode("النسخة التجريبية المؤقتة الاصدار 3.0");
+    p.append(text2);
+    containerDiv.appendChild(p);
+    let footer = document.querySelector("footer");
+    footer.style.backgroundColor = "var(--mane-color)";
+    footer.appendChild(containerDiv);
 }
 // Navigation
 export function navigation(home, visuals, bock, whit, english) {

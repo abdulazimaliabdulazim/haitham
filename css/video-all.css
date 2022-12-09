@@ -332,46 +332,6 @@ header {
 }
 /* End Video */
 
-/* Start Footer */
-footer {
-    background-color: var(--mane-color);
-}
-footer .parent {
-    padding: 10px 0;
-}
-footer .parent .social-icon {
-    display: flex;
-    justify-content: space-around;
-}
-footer .box a i {
-    color: white;
-    font-size: 25px;
-    padding: 7px;
-    border-radius: 5px;
-    /* margin-left: 50px; */
-}
-@media (max-width: 767px) {
-    footer .social-icon {
-        margin: 20px 0 10px -40px;
-    }
-}
-footer .box a i:hover {
-    color: var(--mane-color);
-    background-color: white;
-}
-footer  p {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-@media (max-width: 767px) {
-    footer p {
-        font-size: 10px;
-    }
-}
-/* End Footer */
-
 /* Start Animation */
 @keyframes left-move {
     50% {
