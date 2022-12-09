@@ -5,7 +5,7 @@ navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../
 activeFunction();
 
 // Videos Counte
-async function getVideo(apiLink) {
+export async function getVideo(apiLink) {
   try {
     let result = await fetch(apiLink);
     let jsDataFour = await result.json();

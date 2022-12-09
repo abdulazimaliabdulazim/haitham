@@ -1,0 +1,43 @@
+{
+    "download": "تحميل الكتاب",
+    "iconDownload": "fa-solid fa-download fa-fw",
+    "langw": {
+        "englsh": [
+            {
+                "bock": {
+                    "url": "../images/image-bock/englsh1.png",
+                    "title": "الهندوسية في ميزان تعاليمها الأصلية والعقل والفطرة السليمة - إنجليزي",
+                    "src_link": "https://d1.islamhouse.com/data/en/ih_books/single3/en-hinduism-question-and-answer.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "../images/image-bock/englsh2.png",
+                    "title": "الإلحاد الروحي وخطره على العقيدة والعقل - إنجليزي",
+                    "src_link": "https://d1.islamhouse.com/data/en/ih_books/single3/en-spiritual-atheism.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "../images/image-bock/englsh3.png",
+                    "title": "الإسلام والإلحاد وجها لوجه - إنجليزي",
+                    "src_link": "https://d1.islamhouse.com/data/en/ih_books/single3/en-islam-vs-atheism.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "../images/image-bock/englsh4.png",
+                    "title": "الرسول الأخير - إنجليزي",
+                    "src_link": "https://d1.islamhouse.com/data/en/ih_books/single3/en-last-prophet.pdf"
+                }
+            },
+            {
+                "bock": {
+                    "url": "../images/image-bock/englsh5.png",
+                    "title": "الملاحدة لصوص الآخرة - إنجليزي",
+                    "src_link": "https://d1.islamhouse.com/data/en/ih_books/single3/en-atheists-thieves-of-the-hereafter.pdf"
+                }
+            }
+        ]
+    }
+}
