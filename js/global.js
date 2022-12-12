@@ -34,6 +34,7 @@ export function header(home, visuals, bock, article, english) {
   </div>`
 }
 
+// Navigation
 export function navigation(home, visuals, bock, whit, english, eng_arb) {
   // Document Object Model
   // Parent

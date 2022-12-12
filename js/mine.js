@@ -1,10 +1,60 @@
 import {header, activeFunction, navigation, socialMedia, scrollToTop, footer} from "./global.js";
-header("index.html", "#visuals", "#bock", "#", "html/indexEng.html");
+header("index.html", "#visuals", "#bock", "#", "html/indexEng.html"); // One Order
+socialMedia(); // Two Order
+scrollToTop(); // Three Order
+navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html', "English"); // Four Order
 activeFunction();
-socialMedia();
 footer();
-navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html', "English");
-scrollToTop();
+
+// Videos Mine
+async function getVideo(apiLink) {
+  try {
+    let result = await fetch(apiLink);
+    let jsDataFour = await result.json();
+    return jsDataFour.items;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("Good");
+  }
+}
+getVideo(
+  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`
+).then((result) => {
+  let boxAll = document.querySelector("main.visuals .box-all");
+  for (let i = 0; i <= result.length; i++) {
+    let boxAllTest = document.createElement("div");
+    boxAllTest.className = "box";
+    boxAllTest.style.margin = "10px";
+    boxAllTest.innerHTML = 
+    `<iframe
+        src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
+        title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
+        autoplay; clipboard-write; encrypted-media;
+        gyroscope; picture-in-picture"allowfullscreen>
+      </iframe>`;
+    boxAll.appendChild(boxAllTest);
+  }
+});
+
+// Scroll Video
+let boxAll = document.querySelector(".box-all");
+let iconVideo = document.querySelector(".iconVideo");
+// Scroll Video Left
+let iconVideoLeft = document.createElement("i");
+iconVideoLeft.className = "fa-solid fa-caret-left";
+iconVideo.appendChild(iconVideoLeft);
+iconVideoLeft.onclick = function () {
+  boxAll.style.transform += `translateX(-300px)`;
+}
+
+// Scroll Video Right
+let iconVideoRight = document.createElement("i");
+iconVideoRight.className = "fa-solid fa-caret-right";
+iconVideo.appendChild(iconVideoRight);
+iconVideoRight.onclick = function () {
+  boxAll.style.transform += `translateX(300px)`;
+}
 
 
 // (Page Mine)
@@ -73,9 +123,6 @@ myJsonLangw.onreadystatechange = function () {
         e.currentTarget.classList.add("active");
         bocks.innerHTML = "";
         ele.id != "arbic" ? noneLiFilter.forEach(ele => ele.style.display = "none") : noneLiFilter.forEach(ele => ele.style.display = "block");
-        if (ele.id != "arbic") {
-          noneLiFilter.forEach(ele => ele.style.display = "none");
-        }
         for (let i = 0; i < responseTextMyJson.langw[`${ele.id}`].length; i++) {
           bocks.innerHTML +=
             `<div class="bock">
@@ -95,56 +142,6 @@ myJsonLangw.onreadystatechange = function () {
     });
   }
 };
-
-// Videos Mine
-async function getVideo(apiLink) {
-  try {
-    let result = await fetch(apiLink);
-    let jsDataFour = await result.json();
-    return jsDataFour.items;
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log("Good");
-  }
-}
-getVideo(
-  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`
-).then((result) => {
-  let boxAll = document.querySelector("main.visuals .box-all");
-  for (let i = 0; i <= result.length; i++) {
-    let boxAllTest = document.createElement("div");
-    boxAllTest.className = "box";
-    boxAllTest.style.margin = "10px";
-    boxAllTest.innerHTML = 
-    `<iframe
-        src="https://www.youtube.com/embed/${result[i].id.videoId}?rel=0"
-        title="${result[i].snippet.title}" frameborder="0"allow="accelerometer;
-        autoplay; clipboard-write; encrypted-media;
-        gyroscope; picture-in-picture"allowfullscreen>
-      </iframe>`;
-    boxAll.appendChild(boxAllTest);
-  }
-});
-
-// Scroll Video
-let boxAll = document.querySelector(".box-all");
-let iconVideo = document.querySelector(".iconVideo");
-// Scroll Video Left
-let iconVideoLeft = document.createElement("i");
-iconVideoLeft.className = "fa-solid fa-caret-left";
-iconVideo.appendChild(iconVideoLeft);
-iconVideoLeft.onclick = function () {
-  boxAll.style.transform += `translateX(-300px)`;
-}
-
-// Scroll Video Right
-let iconVideoRight = document.createElement("i");
-iconVideoRight.className = "fa-solid fa-caret-right";
-iconVideo.appendChild(iconVideoRight);
-iconVideoRight.onclick = function () {
-  boxAll.style.transform += `translateX(300px)`;
-}
 
 
 function newProduct(bocks) {
