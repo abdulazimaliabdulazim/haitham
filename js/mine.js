@@ -1,9 +1,11 @@
-import {scrollToTop, header, footer, activeFunction, navigation} from "./global.js";
-scrollToTop();
+import {header, activeFunction, navigation, socialMedia, scrollToTop, footer} from "./global.js";
 header("index.html", "#visuals", "#bock", "#", "html/indexEng.html");
-footer();
 activeFunction();
-navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html');
+socialMedia();
+footer();
+navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html', "English");
+scrollToTop();
+
 
 // (Page Mine)
 // Json Bocks
@@ -127,14 +129,21 @@ getVideo(
 
 // Scroll Video
 let boxAll = document.querySelector(".box-all");
-
+let iconVideo = document.querySelector(".iconVideo");
 // Scroll Video Left
-function scrollVideo_L() {
-  boxAll.style.transform += `translateX(-100px)`;
+let iconVideoLeft = document.createElement("i");
+iconVideoLeft.className = "fa-solid fa-caret-left";
+iconVideo.appendChild(iconVideoLeft);
+iconVideoLeft.onclick = function () {
+  boxAll.style.transform += `translateX(-300px)`;
 }
+
 // Scroll Video Right
-function scrollVideo_R() {
-  boxAll.style.transform += `translateX(100px)`;
+let iconVideoRight = document.createElement("i");
+iconVideoRight.className = "fa-solid fa-caret-right";
+iconVideo.appendChild(iconVideoRight);
+iconVideoRight.onclick = function () {
+  boxAll.style.transform += `translateX(300px)`;
 }
 
 

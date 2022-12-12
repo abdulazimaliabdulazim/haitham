@@ -2,64 +2,39 @@
 export function header(home, visuals, bock, article, english) {
   document.querySelector("header").innerHTML = 
   `<div class="container">
-  <div class="head">
-     <div class="logo">
-         <a href='${home}'>
-         <h3><span class="hitham">هيثم</span> <span class="talm">طلعت</span></h3>
-         </a>
-     </div>
-     <nav>
-         <ul>
-           <li>
-               <a href='${home}' class="active">
-               الرئيسية
-               </a>
-           </li>
-           <li>
-               <a href='${visuals}'>المرئيات</a>
-           </li>
-           <li>
-               <a href='${bock}'>الكتب</a>
-           </li>
-           <li>
-               <a href='${article}'>المقالات</a>
-           </li>
-           <li>
-               <a href='${english}'>English</a>
-           </li>
-         </ul>
-     </nav>
-  </div>
-  <i class="fa-solid fa-align-left"></i>
+    <div class="head">
+      <div class="logo">
+          <a href='${home}'>
+          <h3><span class="hitham">هيثم</span> <span class="talm">طلعت</span></h3>
+          </a>
+      </div>
+      <nav>
+          <ul>
+            <li>
+                <a href='${home}' class="active">
+                الرئيسية
+                </a>
+            </li>
+            <li>
+                <a href='${visuals}'>المرئيات</a>
+            </li>
+            <li>
+                <a href='${bock}'>الكتب</a>
+            </li>
+            <li>
+                <a href='${article}'>المقالات</a>
+            </li>
+            <li>
+                <a href='${english}'>English</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <i class="fa-solid fa-align-left"></i>
   </div>`
 }
-// Components Footer
-export function footer() {
-    let containerDiv = document.createElement("div");
-    containerDiv.className = "container";
-    // Text One
-    let p = document.createElement("p");
-    let text = document.createTextNode("حقوق الطبع محفوظة ");
-    p.style.cssText = "color: white;font-size: 20px;font-weight: bold;text-align: center;line-height: 1.6;margin: 0;padding: 10px 0";
-    p.appendChild(text);
-    // Span Year
-    let span = document.createElement("span");
-    let year = document.createTextNode(new Date().getFullYear());
-    span.appendChild(year);
-    // Br
-    let br = document.createElement("br");
-    p.append(br);
-    p.append(span);
-    // Text Two
-    let text2 = document.createTextNode("النسخة التجريبية المؤقتة الاصدار 3.0");
-    p.append(text2);
-    containerDiv.appendChild(p);
-    let footer = document.querySelector("footer");
-    footer.style.backgroundColor = "var(--mane-color)";
-    footer.appendChild(containerDiv);
-}
-// Navigation
-export function navigation(home, visuals, bock, whit, english) {
+
+export function navigation(home, visuals, bock, whit, english, eng_arb) {
   // Document Object Model
   // Parent
   let parent = document.createElement("nav");
@@ -84,13 +59,12 @@ export function navigation(home, visuals, bock, whit, english) {
   let a3 = document.createElement("a");
   let a4 = document.createElement("a");
   let a5 = document.createElement("a");
-  a1.className = "active";
+  // a1.className = "active"; 
   let links = [a1, a2, a3, a4, a5];
-  links.forEach(ele => ele.style.cssText = "color: black; font-size: 30px");
   links.forEach((ele) => {
-    ele.onclick = activeFunction;
     ele.style.cssText = "color: black; font-size: 30px";
-  })
+    ele.onclick = activeFunction;
+  });
   // hred Links
   a1.href = home;
   a2.href = visuals;
@@ -103,7 +77,7 @@ export function navigation(home, visuals, bock, whit, english) {
   let text2 = document.createTextNode("المرئيات");
   let text3 = document.createTextNode("الكتب");
   let text4 = document.createTextNode("من نحن");
-  let text5 = document.createTextNode("English");
+  let text5 = document.createTextNode(eng_arb);
   // Append Texts On Links
   a1.appendChild(text1);
   a2.appendChild(text2);
@@ -157,7 +131,7 @@ export function scrollToTop() {
 
 // Class Active
 export function activeFunction() {
-  let active = document.querySelectorAll("nav ul li a");
+  let active = document.querySelectorAll("ul li");
   active.forEach((a) => {
     a.addEventListener("click", (e) => {
       active.forEach((a) => {
@@ -166,4 +140,56 @@ export function activeFunction() {
       e.currentTarget.classList.add("active");
     });
   });
+}
+
+// Start Social Media
+export function socialMedia() {
+  document.querySelector("body").innerHTML += 
+  `<div class="social-icon">
+    <div class="parent">
+      <i class="fa-solid fa-comments fa-fw"></i>
+      <div class="box">
+        <a href="https://web.facebook.com/drhaithamofficial" target="_blank">
+          <i class="fab fa-facebook-f fa-fw"></i>
+        </a>
+      </div>
+      <div class="box">
+        <a href="https://twitter.com/ibn_badys" target="_blank">
+          <i class="fab fa-twitter fa-fw"></i>
+        </a>
+      </div>
+      <div class="box">
+        <a href="https://www.youtube.com/channel/UCLj8UFOcdFrvlh24Lw7jrgA/about" target="_blank" >
+          <i class="fab fa-youtube fa-fw"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+// Components Footer
+export function footer() {
+  let containerDiv = document.createElement("div");
+  containerDiv.className = "container";
+  // Text One
+  let p = document.createElement("p");
+  let text = document.createTextNode("حقوق الطبع محفوظة ");
+  p.style.cssText = "color: white;font-size: 20px;font-weight: bold;text-align: center;line-height: 1.6;margin: 0;padding: 10px 0";
+  p.appendChild(text);
+  // Span Year
+  let span = document.createElement("span");
+  let year = document.createTextNode(new Date().getFullYear());
+  span.appendChild(year);
+  // Br
+  let br = document.createElement("br");
+  p.append(br);
+  p.append(span);
+  // Text Two
+  let text2 = document.createTextNode("النسخة التجريبية المؤقتة الاصدار 3.0");
+  p.append(text2);
+  containerDiv.appendChild(p);
+  let footer = document.querySelector("footer");
+  footer.style.backgroundColor = "var(--mane-color)";
+  footer.appendChild(containerDiv);
 }

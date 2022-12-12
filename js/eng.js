@@ -1,8 +1,9 @@
-import {scrollToTop, footer, activeFunction, navigation} from "./global.js";
+import {scrollToTop, footer, activeFunction, navigation, socialMedia} from "./global.js";
 footer();
 scrollToTop();
-navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../html/indexEng.html');
+socialMedia();
 activeFunction();
+navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../index.html', "عربي");
 
 // Json Bocks
 let bocks = document.querySelector("article.articles .container .bocks");

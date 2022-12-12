@@ -1,8 +1,9 @@
-import {header, activeFunction, footer, navigation} from "./global.js";
+import {header, activeFunction, footer, navigation, socialMedia} from "./global.js";
 header('../index.html', "../#visuals", "../#bock", "../#", "../html/indexEng.html")
-footer();
 navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../html/indexEng.html');
 activeFunction();
+socialMedia();
+footer();
 
 // Videos Counte
 export async function getVideo(apiLink) {
