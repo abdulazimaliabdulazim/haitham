@@ -108,7 +108,7 @@ myJsonFilter.onreadystatechange = function () {
     });
   }
 };
-
+// Bocks langw
 const langw = document.querySelectorAll(".langw ul li");
 let noneLiFilter = [filt[1], filt[2], filt[3]];
 let myJsonLangw = new XMLHttpRequest();
