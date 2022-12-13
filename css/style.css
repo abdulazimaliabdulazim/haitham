@@ -40,9 +40,7 @@ ul {
     padding: 0
 }
 .active {
-    padding: 15px 0;
     background-color: var(--mane-color);
-    color: white;
 }
 /* Small */
 @media (min-width: 768px) {

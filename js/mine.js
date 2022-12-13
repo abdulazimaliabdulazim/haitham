@@ -1,5 +1,5 @@
 import {header, activeFunction, navigation, socialMedia, scrollToTop, footer} from "./global.js";
-header("index.html", "#visuals", "#bock", "#", "html/indexEng.html"); // One Order
+header("index.html", "#visuals", "#bock", "#", "html/indexEng.html", "English", "هيثم طلعت", "الرئيسية", "المرئيات", "الكتب", "المقالات"); // One Order
 socialMedia(); // Two Order
 scrollToTop(); // Three Order
 navigation('index.html', '#visuals', '#bock', 'html/whit.html', 'html/indexEng.html', "English"); // Four Order
@@ -19,7 +19,7 @@ async function getVideo(apiLink) {
   }
 }
 getVideo(
-  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyB0AHvujKcQQIn8d3TXWUWEVqTHlKh3rjU`
+  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`
 ).then((result) => {
   let boxAll = document.querySelector("main.visuals .box-all");
   for (let i = 0; i <= result.length; i++) {

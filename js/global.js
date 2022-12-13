@@ -1,37 +1,37 @@
 // Components Header
-export function header(home, visuals, bock, article, english) {
+export function header(home, visuals, bock, article, english, textLang, logoName, homeName, visualsName, bockName, articleName) {
   document.querySelector("header").innerHTML = 
   `<div class="container">
     <div class="head">
       <div class="logo">
           <a href='${home}'>
-          <h3><span class="hitham">هيثم</span> <span class="talm">طلعت</span></h3>
+          <h3>${logoName}</h3>
           </a>
       </div>
       <nav>
           <ul>
             <li>
                 <a href='${home}' class="active">
-                الرئيسية
+                ${homeName}
                 </a>
             </li>
             <li>
-                <a href='${visuals}'>المرئيات</a>
+                <a href='${visuals}'>${visualsName}</a>
             </li>
             <li>
-                <a href='${bock}'>الكتب</a>
+                <a href='${bock}'>${bockName}</a>
             </li>
             <li>
-                <a href='${article}'>المقالات</a>
+                <a href='${article}'>${articleName}</a>
             </li>
             <li>
-                <a href='${english}'>English</a>
+                <a href='${english}'>${textLang}</a>
             </li>
           </ul>
       </nav>
     </div>
     <i class="fa-solid fa-align-left"></i>
-  </div>`
+  </div>`;
 }
 
 // Navigation
@@ -178,16 +178,11 @@ export function footer() {
   let text = document.createTextNode("حقوق الطبع محفوظة ");
   p.style.cssText = "color: white;font-size: 20px;font-weight: bold;text-align: center;line-height: 1.6;margin: 0;padding: 10px 0";
   p.appendChild(text);
-  // Span Year
-  let span = document.createElement("span");
-  let year = document.createTextNode(new Date().getFullYear());
-  span.appendChild(year);
   // Br
   let br = document.createElement("br");
   p.append(br);
-  p.append(span);
   // Text Two
-  let text2 = document.createTextNode("النسخة التجريبية المؤقتة الاصدار 3.0");
+  let text2 = document.createTextNode( new Date().getFullYear() + 'النسخة التجريبية المؤقتة الاصدار 3.0');
   p.append(text2);
   containerDiv.appendChild(p);
   let footer = document.querySelector("footer");

@@ -20,63 +20,98 @@
     />
     <style>
       /* Start Video */
-      .visuals .box-all {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-      }
-      .visuals .box-all .box {
-        width: calc((100% / 3) - 30px);
-        margin: 15px;
-      }
-      .visuals .box-all .box p {
-        width: 100%;
-        height: 40px;
-        background-color: white;
-        padding: 15px;
-        overflow: hidden;
-        margin-bottom: 0;
-        word-break: break-all;
-        text-overflow: ellipsis;
-        margin-top: 0;
-      }
-      .visuals .box-all .box p:hover {
-        height: auto;
-        word-break: normal;
-        white-space: normal;
-      }
-      /* End Video */
-      @media (max-width: 767px) {
-        .articles .bocks {
-          grid-template-columns: repeat(1, 1fr);
-          gap: 20px;
-        }
-      }
+.visuals {
+    max-width: 100%;
+    margin-top: calc(var(--margin-top) + 30px);
+    margin-bottom: var(--margin-bottom);
+    overflow-x: hidden;
+}
+.visuals .box-all {
+    display: flex;
+}
+.info {
+    position: relative;
+    padding: 20px 20px 0 0;
+    cursor: pointer;
+}
+.info h3 {
+    color: var(--mane-color);
+}
+.info .box {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 7px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.info .box:hover,
+.info .active {
+    background-color: var(--mane-color);
+}
+.info .box img {
+    width: 40px;
+    border-radius: 5px;
+}
+.info .box label {
+    cursor: pointer;
+    color: var(--mane-color-alt);
+}
+.visuals .box-all .videos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 0 10px;
+}
+.visuals .box-all .videos .box p {   
+    width: 95%;       
+    height: 40px;
+    background-color: white;
+    padding: 15px;
+    overflow: hidden;
+    margin-bottom: 0;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #0000002b;
+}
+.visuals .box-all .videos .box p:hover {
+    height: auto;
+    word-break: normal;
+    white-space: normal;
+}
+@media (max-width: 767px) {
+    .info {
+        padding: 0;
+    }
+    .info .box {
+        margin: 5px 0;
+        padding: 4px 0;
+        flex-direction: column;
+    }
+    .info .box img {
+        width: 20px;
+    }
+    .info::before {
+        left: 0;
+    }
+    .info .box label {
+        font-size: 10px;
+    }
+}
+/* End Video */
     </style>
   </head>
   <body onscroll="scrollToTop()">
     <header>
-      <div class="container">
-        <div class="head">
-           <div class="logo">
-               <a href="../index.html">
-               <h3><span class="hitham">هيثم</span> <span class="talm">طلعت</span></h3>
-               </a>
-           </div>
-           <nav style="display: block">
-               <ul>
-                 <li>
-                     <a href="../index.html" class="active">
-                     الرئيسية
-                     </a>
-                 </li>
-                 <li>
-                     <a href="../index.html">عربي</a>
-                 </li>
-               </ul>
-           </nav>
-        </div>
-        </div>
     </header>
     <!-- Start Section -->
     <section>
@@ -113,6 +148,7 @@
     <!-- End Section -->
 
     <!-- Start Video -->
+    <h3 class="main-title">Videos</h3>
     <main class="visuals">
         <div class="box-all">
           <div class="videos"></div>
@@ -132,7 +168,6 @@
 
     <footer></footer>
     
-    <script src="../js/video-all.js" type="module"></script>
     <script type="module" src="../js/eng.js"></script>
   </body>
 </html>
