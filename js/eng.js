@@ -1,24 +1,8 @@
-import {scrollToTop, footer, activeFunction, navigation, socialMedia, header} from "./global.js";
-header("../index.html", "#visuals", "#bock", "#", "../index.html", "عربي", "Haitham Talaat's", "Home", "Visuals", "Bock", "Aricle");
-socialMedia();
-activeFunction();
-scrollToTop();
-navigation('../index.html', '#visuals', '#bock', '../html/whit.html', '../index.html', "عربي");
-footer();
+import {navigation, header, getVideo} from "./global.js";
+header("../index.html","هيثم طلعت", "الرئيسية", "#visuals", "المرئيات", "#bock", "الكتب","#", "المقالات", "html/indexEng.html", "عربي");
+navigation('../index.html', "Home", '#visuals', "Visuals", '#bock', "Bock", 'html/whit.html', 'who are we', 'html/indexEng.html', "عربي");
 
 // Videos Counte
-export async function getVideo(apiLink) {
-  try {
-    let result = await fetch(apiLink);
-    let jsDataFour = await result.json();
-    return jsDataFour.items;
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log("Good");
-  }
-}
-
 let videos = document.querySelector(".videos");
 
 getVideo('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC13KPGZ_OhiRRwXwTZuWG9g&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg').then((result) => {

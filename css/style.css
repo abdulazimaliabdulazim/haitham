@@ -178,6 +178,9 @@ header {
     color: white;
     cursor: pointer;
 }
+.head .logo a h3 {
+    width: 100px;
+}
 .head nav ul {
     display: flex;
 }

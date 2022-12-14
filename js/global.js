@@ -1,17 +1,17 @@
 // Components Header
-export function header(home, visuals, bock, article, english, textLang, logoName, homeName, visualsName, bockName, articleName) {
+export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, bockName, article, articleName, engSrc, langName) {
   document.querySelector("header").innerHTML = 
   `<div class="container">
     <div class="head">
       <div class="logo">
-          <a href='${home}'>
+          <a href='${homeSrc}'>
           <h3>${logoName}</h3>
           </a>
       </div>
       <nav>
           <ul>
             <li>
-                <a href='${home}' class="active">
+                <a href='${homeSrc}'>
                 ${homeName}
                 </a>
             </li>
@@ -25,17 +25,21 @@ export function header(home, visuals, bock, article, english, textLang, logoName
                 <a href='${article}'>${articleName}</a>
             </li>
             <li>
-                <a href='${english}'>${textLang}</a>
+                <a href='${engSrc}'>${langName}</a>
             </li>
           </ul>
       </nav>
     </div>
     <i class="fa-solid fa-align-left"></i>
   </div>`;
+  activeFunction();
+  socialMedia();
+  scrollToTop();
+  footer();
 }
 
 // Navigation
-export function navigation(home, visuals, bock, whit, english, eng_arb) {
+export function navigation(home, homeNmae, visuals, visualsName, bock, bockName, whit, weName, english, langName) {
   // Document Object Model
   // Parent
   let parent = document.createElement("nav");
@@ -74,11 +78,11 @@ export function navigation(home, visuals, bock, whit, english, eng_arb) {
   a5.href = english;
  
   // Texts Links
-  let text1 = document.createTextNode("الرئيسية");
-  let text2 = document.createTextNode("المرئيات");
-  let text3 = document.createTextNode("الكتب");
-  let text4 = document.createTextNode("من نحن");
-  let text5 = document.createTextNode(eng_arb);
+  let text1 = document.createTextNode(homeNmae);
+  let text2 = document.createTextNode(visualsName);
+  let text3 = document.createTextNode(bockName);
+  let text4 = document.createTextNode(weName);
+  let text5 = document.createTextNode(langName);
   // Append Texts On Links
   a1.appendChild(text1);
   a2.appendChild(text2);
@@ -104,7 +108,7 @@ export function navigation(home, visuals, bock, whit, english, eng_arb) {
   leftIcone.onclick = blockAnone;
 }
 
-// Scroll Website
+// Scroll To Top Website
 export function scrollToTop() {
   let button = document.createElement("div");
   button.id = "button";
@@ -128,6 +132,19 @@ export function scrollToTop() {
       behavior: "smooth",
     });
   };
+}
+
+// Videos Mine
+export async function getVideo(apiLink) {
+  try {
+    let result = await fetch(apiLink);
+    let jsDataFour = await result.json();
+    return jsDataFour.items;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("Good");
+  }
 }
 
 // Class Active

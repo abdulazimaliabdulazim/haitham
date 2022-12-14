@@ -1,26 +1,9 @@
-import {header, activeFunction, footer, navigation, socialMedia} from "./global.js";
-header('../index.html', "../#visuals", "../#bock", "../#", "../html/indexEng.html", "English", "هيثم طلعت", "الرئيسية", "المرئيات", "الكتب", "المقالات");
-navigation('../index.html', '../#visuals', '../#bock', '../html/whit.html', '../html/indexEng.html');
-activeFunction();
-socialMedia();
-footer();
+import {header, navigation, getVideo} from "./global.js";
+header("../index.html","هيثم طلعت", "الرئيسية", "#visuals", "المرئيات", "../#bock", "الكتب","../#", "المقالات", "../html/indexEng.html", "English");
+navigation('../index.html', "الرئيسية", '../#visuals', "المرئيات", '../#bock', "الكتب", '../html/whit.html', 'من نحن', '../html/indexEng.html', "English");
 
 // Videos Counte
-export async function getVideo(apiLink) {
-  try {
-    let result = await fetch(apiLink);
-    let jsDataFour = await result.json();
-    return jsDataFour.items;
-  } catch (error) {
-    console.log(error);
-  } finally {
-    console.log("Good");
-  }
-}
-
 let videos = document.querySelector(".videos");
-let viId = document.querySelectorAll(".visuals .box-all .box");
-
 getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
   for (let i = 0; i <= result.length; i++) {
     let box = document.createElement("div"); 
@@ -42,6 +25,7 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
   };
 });
 
+let viId = document.querySelectorAll(".visuals .box-all .box");
 viId.forEach((ele) => {
   ele.addEventListener("click", (e) => {
     videos.innerHTML = "";
