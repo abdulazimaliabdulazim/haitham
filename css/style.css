@@ -197,7 +197,7 @@ header {
     background-color: var(--mane-color-alt);
     width: 100%;
     height: 3px;
-    bottom: -2px;
+    bottom: -11px;
     animation: aa 0.3s linear forwards;
 }
 @keyframes aa {
@@ -337,46 +337,10 @@ main.visuals .iconVideo i {
 /* End Video */
 
 /* Start Bock */
-article.articles {
-    position: relative;
-    background-image: url(../images/image6.jpg);
-    background-repeat: repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-top: var(--margin-top);
-}
-article.articles .container ul.filter {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    background-color: #00539c9c;
-}
-@media (max-width: 768px) {  
-    article.articles .container ul.filter {
-        flex-direction: column;
-    }
-    article.articles .container ul.filter #all,
-    #alhadu,
-    #eman,
-    #cover {
-        width: 100%;
-    }
-}
-article.articles .container ul.filter li {
-    width: 20%;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
 article.articles .container .bocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    margin-top: var(--margin-top);
+    margin-top: 40px;
     margin-bottom: var(--margin-bottom);
     gap: 30px;
 }
@@ -423,6 +387,25 @@ article.articles .container .bocks .bock .text a.download {
 article.articles .container .bocks .bock .text a.download:hover {
     color: var(--mane-color-alt);
 }
+article.articles {
+    position: relative;
+    background-image: url(../images/image6.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: var(--margin-top);
+}
+@media (max-width: 768px) {  
+    article.articles .container ul.filter {
+        flex-direction: column;
+    }
+    article.articles .container ul.filter #all,
+    #alhadu,
+    #eman,
+    #cover {
+        width: 100%;
+    }
+}
 @media (max-width: 767px) {
     .articles .bocks .bock {
         margin: 20px auto;
@@ -460,68 +443,56 @@ article.articles .container .bocks .bock .text a.download:hover {
         gap: 20px;
     }
 }
+/* Start Filter */
+article.articles .container .parent .filter ul {
+    display: flex;
+    background-color: #00539c9c;
+}
+article.articles .container .parent .filter ul li {
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+/* End Filter */
 /* Start Language */
 .langw {
     position: absolute;
-    top: 12px;
-    left: 0px;
-    width: 145px;
-}
-.langw::before {
-    content: "";
-    position: absolute;
-    width: 17px;
-    height: 100%;
-    background-color: rgba(0 0 0 / 50%);
-    left: 0;
-}
-.langw ul h3 {
-    position: absolute;
-    color: white;
-    background-color: var(--mane-color);
-    cursor: pointer;
-    height: 24px;
-    font-size: 20px;
-    font-weight: bold;
-    top: -20px;
-    width: 100%;
 }
 .langw ul {
-    width: 145px;
+    width: 136px;
     background-color: rgba(0 0 0 / 50%);
-    overflow: auto;    
+}
+.langw ul button {
+    width: 100%;
+    background-color: white;
+    color: var(--mane-color);
+    font-size: 19px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
 }
 .langw ul li {
-    width: 100%;
     display: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+.langw ul:hover .langw ul li {
+    display: block;
 }
 .langw ul li:hover {
     background-color: var(--mane-color);
-    width: 100%;
-}
-.langw ul:hover li {
-    position: relative;
-    top: 33px;
-    display: block;
-}
-@media (max-width: 768px) {
-    .langw {
-        position: absolute;
-        right: 0;
-        width: 68%;
-        top: 168px;
-    }
-    .langw ul h3 {
-        width: 60%;
-    }
-    .langw::before {
-        display: none;
-    }
 }
 /* End Language */
 /* End Bock */
 
-/* Start lan Media */
+/* Start Social Media */
 .social-icon {
     position: fixed;
     top: 30%;

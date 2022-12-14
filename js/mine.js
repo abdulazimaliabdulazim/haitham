@@ -136,3 +136,14 @@ function newProduct(bocks) {
   newProduct.appendChild(textNewProduct);
   bocks.appendChild(newProduct);
 }
+
+function ShowLanguages() { // 10
+    let liLang = document.querySelectorAll(".langw ul li");
+   document.querySelector(".hiddenLang").onclick = () => {
+        liLang.forEach(ele => {
+            ele.style.display == "block" ? ele.style.display = "none" : ele.style.display = "block";
+            ele.addEventListener("click", () => liLang.forEach(a => a.style.display = "none"));
+        })
+    }
+  }
+  ShowLanguages();
