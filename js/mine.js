@@ -4,7 +4,7 @@ navigation('index.html', "الرئيسية", '#visuals', "المرئيات", '#b
 
 // Videos Mine
 getVideo(
-  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`
+  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`
 ).then((result) => {
   let boxAll = document.querySelector("main.visuals .box-all");
   for (let i = 0; i <= result.length; i++) {
@@ -53,17 +53,16 @@ myJsonFilter.send();
 myJsonFilter.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let responseTextMyJson = JSON.parse(this.responseText);
-    filt[0].innerHTML += ` ( ${responseTextMyJson.arbic.all.length})`;
     for (let i = 0; i < responseTextMyJson.arbic.all.length; i++) {
       bocks.innerHTML +=
         `<div class="bock">
           <div class="images">
-            <img src="${responseTextMyJson.arbic.all[i].bock.url}">
+            <img src=${responseTextMyJson.arbic.all[i].bock.url}>
           </div>
           <div class="text">
-            <p>"${responseTextMyJson.arbic.all[i].bock.title}"</p>
-            <a class="download" href="${responseTextMyJson.arbic.all[i].bock.src_link}" target="_blanck">
-              "${responseTextMyJson.download}"
+            <p>${responseTextMyJson.arbic.all[i].bock.title}</p>
+            <a class="download" href=${responseTextMyJson.arbic.all[i].bock.src_link} target="_blanck">
+              ${responseTextMyJson.download}
               <i class="${responseTextMyJson.iconDownload}"></i>
             </a>
           </div>
@@ -78,12 +77,12 @@ myJsonFilter.onreadystatechange = function () {
           bocks.innerHTML +=
             `<div class="bock">
             <div class="images">
-              <img src="${responseTextMyJson.arbic[`${ele.id}`][i].bock.url}">
+              <img src=${responseTextMyJson.arbic[`${ele.id}`][i].bock.url}>
             </div>
             <div class="text">
-              <p>"${responseTextMyJson.arbic[`${ele.id}`][i].bock.title}"</p>
-              <a class="download" href="${responseTextMyJson.arbic[`${ele.id}`][i].bock.src_link}" target="_blanck">
-                "${responseTextMyJson.download}"
+              <p>${responseTextMyJson.arbic[`${ele.id}`][i].bock.title}</p>
+              <a class="download" href=${responseTextMyJson.arbic[`${ele.id}`][i].bock.src_link} target="_blanck">
+                ${responseTextMyJson.download}
                 <i class="${responseTextMyJson.iconDownload}"></i>
               </a>
             </div>
@@ -91,6 +90,7 @@ myJsonFilter.onreadystatechange = function () {
         }
       });
     });
+    filt.forEach(ele => ele.title = `عدد الكتب ${responseTextMyJson.arbic[`${ele.id}`].length}`);
   }
 };
 // Bocks langw
@@ -112,12 +112,12 @@ myJsonLangw.onreadystatechange = function () {
           bocks.innerHTML +=
             `<div class="bock">
             <div class="images">
-              <img src="${responseTextMyJson.langw[`${ele.id}`][i].bock.url}">
+              <img src=${responseTextMyJson.langw[`${ele.id}`][i].bock.url}>
             </div>
             <div class="text">
-              <p>"${responseTextMyJson.langw[`${ele.id}`][i].bock.title}"</p>
-              <a class="download" href="${responseTextMyJson.langw[`${ele.id}`][i].bock.src_link}" target="_blanck">
-                "${responseTextMyJson.download}"
+              <p>${responseTextMyJson.langw[`${ele.id}`][i].bock.title}</p>
+              <a class="download" href=${responseTextMyJson.langw[`${ele.id}`][i].bock.src_link} target="_blanck">
+                ${responseTextMyJson.download}
                 <i class="${responseTextMyJson.iconDownload}"></i>
               </a>
             </div>
@@ -128,15 +128,6 @@ myJsonLangw.onreadystatechange = function () {
   }
 };
 
-
-function newProduct(bocks) {
-  let newProduct = document.createElement("div");
-  newProduct.className = "newProduct";
-  let textNewProduct = document.createTextNode("جديد");
-  newProduct.appendChild(textNewProduct);
-  bocks.appendChild(newProduct);
-}
-
 function ShowLanguages() { // 10
     let liLang = document.querySelectorAll(".langw ul li");
    document.querySelector(".hiddenLang").onclick = () => {
@@ -146,4 +137,4 @@ function ShowLanguages() { // 10
         })
     }
   }
-  ShowLanguages();
+ShowLanguages();

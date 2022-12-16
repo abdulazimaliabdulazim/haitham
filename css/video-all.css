@@ -157,7 +157,6 @@ header .container .fa-align-left {
     }
 }
 /* End Navigation */
-
 header {
     background-color: #00539c9c;
     width: 100%;
@@ -179,6 +178,9 @@ header {
 .head .logo a {
     color: white;
     cursor: pointer;
+}
+.head .logo a h3 {
+    width: 100px;
 }
 .head nav ul {
     display: flex;

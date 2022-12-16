@@ -4,7 +4,7 @@ navigation('../index.html', "الرئيسية", '../#visuals', "المرئيات
 
 // Videos Counte
 let videos = document.querySelector(".videos");
-getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
   for (let i = 0; i <= result.length; i++) {
     let box = document.createElement("div"); 
     box.className = "box"; 
@@ -31,7 +31,7 @@ viId.forEach((ele) => {
     videos.innerHTML = "";
     viId.forEach(e => e.classList.remove("active"));
     e.currentTarget.classList.add("active");
-    getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+    getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
       for (let i = 0; i <= result.length; i++) {
         let box = document.createElement("div"); 
         box.className = "box";

@@ -136,6 +136,8 @@ export function scrollToTop() {
 
 // Videos Mine
 export async function getVideo(apiLink) {
+  let key = "AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY";
+  let count = 50;
   try {
     let result = await fetch(apiLink);
     let jsDataFour = await result.json();
@@ -192,17 +194,17 @@ export function footer() {
   containerDiv.className = "container";
   // Text One
   let p = document.createElement("p");
-  let text = document.createTextNode("حقوق الطبع محفوظة ");
+  let text = document.createTextNode(`حقوق الطبع محفوظة ${new Date().getFullYear()}`);
   p.style.cssText = "color: white;font-size: 20px;font-weight: bold;text-align: center;line-height: 1.6;margin: 0;padding: 10px 0";
   p.appendChild(text);
   // Br
   let br = document.createElement("br");
   p.append(br);
   // Text Two
-  let text2 = document.createTextNode( new Date().getFullYear() + 'النسخة التجريبية المؤقتة الاصدار 3.0');
+  let text2 = document.createTextNode('النسخة التجريبية المؤقتة الاصدار 3.0');
   p.append(text2);
   containerDiv.appendChild(p);
   let footer = document.querySelector("footer");
-  footer.style.backgroundColor = "var(--mane-color)";
+  footer.style.backgroundColor = "var(--mane-color-opacty)";
   footer.appendChild(containerDiv);
 }

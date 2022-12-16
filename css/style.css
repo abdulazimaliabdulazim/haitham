@@ -40,7 +40,7 @@ ul {
     padding: 0
 }
 .active {
-    background-color: var(--mane-color);
+    background-color: var(--mane-color-opacty);
 }
 /* Small */
 @media (min-width: 768px) {
@@ -103,6 +103,7 @@ ul {
     border-bottom-right-radius: 70px;
     text-shadow: 1px 1px 2px var(--mane-color);
     transition: 0.5s;
+    
 }
 .main-title::before {
     content: "";
@@ -336,12 +337,20 @@ main.visuals .iconVideo i {
 }
 /* End Video */
 
+/* Start Article Book */
+article.articles {
+    position: relative;
+    background-image: url(../images/image6.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: var(--margin-top);
+}
 /* Start Bock */
 article.articles .container .bocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    margin-top: 40px;
-    margin-bottom: var(--margin-bottom);
+    margin-top: 60px;
     gap: 30px;
 }
 article.articles .container .bocks .bock {
@@ -387,25 +396,54 @@ article.articles .container .bocks .bock .text a.download {
 article.articles .container .bocks .bock .text a.download:hover {
     color: var(--mane-color-alt);
 }
-article.articles {
-    position: relative;
-    background-image: url(../images/image6.jpg);
-    background-repeat: repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-top: var(--margin-top);
+/* End Bock */
+/* Filter */
+article.articles .container .parent .filter ul {
+    display: flex;
+    background-color: white;
+    height: 43px;
 }
-@media (max-width: 768px) {  
-    article.articles .container ul.filter {
-        flex-direction: column;
-    }
-    article.articles .container ul.filter #all,
-    #alhadu,
-    #eman,
-    #cover {
-        width: 100%;
-    }
+article.articles .container .parent .filter ul li {
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--mane-color);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 3px solid var(--mane-color-opacty);
 }
+/* Filter */
+/* Language */
+article.articles .container .parent .langw {
+    position: absolute;
+    margin-top: 8px;
+}
+article.articles .container .parent .langw ul {
+    width: 136px;
+    background-color: rgba(0 0 0 / 50%);
+}
+article.articles .container .parent .langw ul button {
+    width: 100%;
+    background-color: white;
+    color: var(--mane-color);
+    font-size: 19px;
+    padding: 5px;
+    cursor: pointer;
+    border: 2px solid var(--mane-color);
+}
+article.articles .container .parent .langw ul li {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+article.articles .container .parent .langw ul li:hover {
+    background-color: var(--mane-color);
+}
+/* Language */
 @media (max-width: 767px) {
     .articles .bocks .bock {
         margin: 20px auto;
@@ -443,54 +481,8 @@ article.articles {
         gap: 20px;
     }
 }
-/* Start Filter */
-article.articles .container .parent .filter ul {
-    display: flex;
-    background-color: #00539c9c;
-}
-article.articles .container .parent .filter ul li {
-    width: 25%;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-/* End Filter */
-/* Start Language */
-.langw {
-    position: absolute;
-}
-.langw ul {
-    width: 136px;
-    background-color: rgba(0 0 0 / 50%);
-}
-.langw ul button {
-    width: 100%;
-    background-color: white;
-    color: var(--mane-color);
-    font-size: 19px;
-    padding: 5px;
-    cursor: pointer;
-    border: none;
-}
-.langw ul li {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-    color: white;
-}
-.langw ul:hover .langw ul li {
-    display: block;
-}
-.langw ul li:hover {
-    background-color: var(--mane-color);
-}
-/* End Language */
-/* End Bock */
+/* End Article Book */
+
 
 /* Start Social Media */
 .social-icon {
