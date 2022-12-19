@@ -32,7 +32,6 @@ export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, 
     </div>
     <i class="fa-solid fa-align-left"></i>
   </div>`;
-  activeFunction();
   socialMedia();
   scrollToTop();
   footer();
@@ -68,7 +67,7 @@ export function navigation(home, homeNmae, visuals, visualsName, bock, bockName,
   let links = [a1, a2, a3, a4, a5];
   links.forEach((ele) => {
     ele.style.cssText = "color: black; font-size: 30px";
-    ele.onclick = activeFunction;
+    ele.onclick = activeFunction(apendLi);
   });
   // hred Links
   a1.href = home;
@@ -136,7 +135,7 @@ export function scrollToTop() {
 
 // Videos Mine
 export async function getVideo(apiLink) {
-  let key = "AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY";
+  let key = ["AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY"];
   let count = 50;
   try {
     let result = await fetch(apiLink);
@@ -145,18 +144,15 @@ export async function getVideo(apiLink) {
   } catch (error) {
     console.log(error);
   } finally {
-    console.log("Good");
+    // console.log("Good");
   }
 }
 
 // Class Active
-export function activeFunction() {
-  let active = document.querySelectorAll("ul li");
-  active.forEach((a) => {
+export function activeFunction(eleActive) {
+  eleActive.forEach((a) => {
     a.addEventListener("click", (e) => {
-      active.forEach((a) => {
-        a.classList.remove("active");
-      });
+      eleActive.forEach((a) => a.classList.remove("active"));
       e.currentTarget.classList.add("active");
     });
   });

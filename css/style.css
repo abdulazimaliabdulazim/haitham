@@ -413,6 +413,9 @@ article.articles .container .parent .filter ul li {
     color: var(--mane-color);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    overflow: hidden;
+}
+article.articles .container .parent .filter ul li:not(.active) {
     border-left: 3px solid var(--mane-color-opacty);
 }
 /* Filter */
@@ -459,6 +462,9 @@ article.articles .container .parent .langw ul li:hover {
     }
     article.articles .container .bocks .bock .images img {
         height: 70%;
+    }
+    article.articles .container .parent .filter ul li#all {
+        font-size: 12px;
     }
 }
 @media (min-width: 1200px) {
