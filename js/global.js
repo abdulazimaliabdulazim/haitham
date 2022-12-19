@@ -36,14 +36,15 @@ export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, 
   scrollToTop();
   footer();
 }
-
+    
 // Navigation
 export function navigation(home, homeNmae, visuals, visualsName, bock, bockName, whit, weName, english, langName) {
   // Document Object Model
   // Parent
   let parent = document.createElement("nav");
+  parent.className = "navMediaM";
   let leftIcone = document.querySelector(".fa-align-left");
-  parent.style.cssText = "position: absolute; background-color: white ;width: 100%; height: auto; display: none";
+  parent.style.cssText = "background-color: white; position: absolute; width: 100%; transition: 0.5s; transform: translateX(-768px)";
   // Ul
   let navUl = document.createElement("ul");
   // Li
@@ -102,7 +103,7 @@ export function navigation(home, homeNmae, visuals, visualsName, bock, bockName,
   document.querySelector("header").appendChild(parent);
   // Click on the icon to Appear Navigation
   function blockAnone() {
-    parent.style.display == "block"? parent.style.cssText = "display: none" : parent.style.cssText = "display: block; background-color: white";
+    parent.style.transform == "translateX(-768px)" ? parent.style.transform = "translateX(0)" : parent.style.transform = "translateX(-768px)";
   }
   leftIcone.onclick = blockAnone;
 }

@@ -11,6 +11,7 @@
     --mine-transition: 0.3s;
     --margin-top: 30px;
     --margin-bottom: 30px;
+    --margin-all: 30px;
     --section-background: #ececec;
     --transform: scaleX(1.2);
 }
@@ -103,7 +104,9 @@ ul {
     border-bottom-right-radius: 70px;
     text-shadow: 1px 1px 2px var(--mane-color);
     transition: 0.5s;
-    
+    font-size: 25px;
+    margin-bottom: var(--margin-bottom);
+    margin-top: var(--margin-top);
 }
 .main-title::before {
     content: "";
@@ -153,6 +156,11 @@ header .container .fa-align-left {
         display: block;
     }
     header .container .head nav {
+        display: none;
+    }
+}
+@media (min-width: 767px) {
+    header nav.navMediaM {
         display: none;
     }
 }
@@ -228,7 +236,6 @@ section {
     position: relative;
     background-image: url(../images/image4.jpg);
     background-repeat: repeat;
-    margin-bottom: var(--margin-bottom);
     color: black;
     text-align: center;
 }
@@ -298,12 +305,12 @@ section .infromition-show .data img {
 main.visuals {
     position: relative;
     overflow: hidden;
-    margin-top: var(--margin-top);
 }
 main.visuals .box-all {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    transition: all 0.5s ease 0s;
 }
 main.visuals .iconVideo {
     display: flex;
@@ -350,8 +357,9 @@ article.articles {
 article.articles .container .bocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--margin-all);
     margin-top: 60px;
-    gap: 30px;
+    margin-bottom: var(--margin-bottom);
 }
 article.articles .container .bocks .bock {
     display: flex;
@@ -525,26 +533,3 @@ article.articles .container .parent .langw ul li:hover {
     border-radius: 5px;
 }
 /* End Social Media */
-
-/* Start New Product */
-.newProduct {
-    background-color: red;
-    color: white;
-    width: 200px;
-    height: 36px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px 15px;
-    text-align: center;
-    position: relative;
-}
-.newProduct::before {
-    content: "";
-    position: absolute;
-    border-width: 18px;
-    border-style: solid;
-    border-color: transparent transparent transparent white;
-    left: 0;
-    top: 0;
-}
-/* End New Product */
