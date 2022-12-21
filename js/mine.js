@@ -1,4 +1,4 @@
-import {header, navigation, getVideo, activeFunction} from "./global.js";
+import {header, navigation, getVideo, activeFunction, createBocks} from "./global.js";
 header("index.html","هيثم طلعت", "الرئيسية", "#visuals", "المرئيات", "#bock", "الكتب","#", "المقالات", "html/indexEng.html", "English"); // One Order
 navigation('index.html', "الرئيسية", '#visuals', "المرئيات", '#bock', "الكتب", 'html/whit.html', 'من نحن', 'html/indexEng.html', "English"); // Four Order
 
@@ -42,22 +42,6 @@ const filt = document.querySelectorAll(".articles .container .filter li");
 const langw = document.querySelectorAll(".langw ul li");
 let noneLiFilter = [filt[1], filt[2], filt[3]];
 
-// create Bocks
-function createBocks(srcImage, textParagraph, scrLink, textDawnload, icon) {
-  bocks.innerHTML +=
-  `<div class="bock">
-    <div class="images">
-      <img src=${srcImage}>
-    </div>
-    <div class="text">
-      <p>${textParagraph}</p>
-      <a class="download" href=${scrLink} target="_blanck">
-        ${textDawnload}
-        <i class="${icon}"></i>
-      </a>
-    </div>
-  </div>`;
-}
 
 let myJsonFilter = new XMLHttpRequest();
 myJsonFilter.open("GET", "json/bock.json");

@@ -30,7 +30,12 @@ export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, 
           </ul>
       </nav>
     </div>
-    <i class="fa-solid fa-align-left"></i>
+    <div class="parentIcon">
+      <div class="allIcon one one-three"></div>
+      <div class="allIcon two two-four"></div>
+      <div class="allIcon three one-three"></div>
+      <div class="allIcon four two-four"></div>
+    </div>
   </div>`;
   socialMedia();
   scrollToTop();
@@ -38,74 +43,68 @@ export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, 
 }
     
 // Navigation
-export function navigation(home, homeNmae, visuals, visualsName, bock, bockName, whit, weName, english, langName) {
-  // Document Object Model
+export function navigation(home, homeNmae, visuals, visualsName, bock, bockName, english, langName, whit, weName) {
   // Parent
   let parent = document.createElement("nav");
   parent.className = "navMediaM";
-  let leftIcone = document.querySelector(".fa-align-left");
+  let leftIcone = document.querySelector(".parentIcon");
   parent.style.cssText = "background-color: white; position: absolute; width: 100%; transition: 0.5s; transform: translateX(-768px)";
   // Ul
   let navUl = document.createElement("ul");
   // Li
-  let nav1 = document.createElement("li");
-  let nav2 = document.createElement("li");
-  let nav3 = document.createElement("li");
-  let nav4 = document.createElement("li");
-  let nav5 = document.createElement("li");
-  let apendLi = [nav1, nav2, nav3, nav4, nav5];
-  apendLi.forEach((ele) => {
+  let liS = [document.createElement("li"), document.createElement("li"), document.createElement("li"), document.createElement("li"), document.createElement("li")];
+  liS[0].className = "active";
+  liS.forEach((ele) => {
     ele.style.cssText = "border-bottom: 1px solid #0000004d; padding: 20px 15px";
     ele.onclick = blockAnone;
   });
   // Links
-  let a1 = document.createElement("a");
-  let a2 = document.createElement("a");
-  let a3 = document.createElement("a");
-  let a4 = document.createElement("a");
-  let a5 = document.createElement("a");
-  // a1.className = "active"; 
-  let links = [a1, a2, a3, a4, a5];
+  let links = [document.createElement("a"), document.createElement("a"), document.createElement("a"), document.createElement("a"), document.createElement("a")];
   links.forEach((ele) => {
     ele.style.cssText = "color: black; font-size: 30px";
-    ele.onclick = activeFunction(apendLi);
+    ele.onclick = activeFunction(liS);
   });
   // hred Links
-  a1.href = home;
-  a2.href = visuals;
-  a3.href = bock;
-  a4.href = whit;
-  a5.href = english;
+  links[0].href = home;
+  links[1].href = visuals;
+  links[2].href = bock;
+  links[3].href = whit;
+  links[4].href = english;
  
   // Texts Links
-  let text1 = document.createTextNode(homeNmae);
-  let text2 = document.createTextNode(visualsName);
-  let text3 = document.createTextNode(bockName);
-  let text4 = document.createTextNode(weName);
-  let text5 = document.createTextNode(langName);
+  let texts = [document.createTextNode(homeNmae), document.createTextNode(visualsName), document.createTextNode(bockName), document.createTextNode(weName), document.createTextNode(langName)];
+
   // Append Texts On Links
-  a1.appendChild(text1);
-  a2.appendChild(text2);
-  a3.appendChild(text3);
-  a4.appendChild(text4);
-  a5.appendChild(text5);
+  links[0].appendChild(texts[0]);
+  links[1].appendChild(texts[1]);
+  links[2].appendChild(texts[2]);
+  links[3].appendChild(texts[3]);
+  links[4].appendChild(texts[4]);
   // Append Links On Ul
-  nav1.appendChild(a1);
-  nav2.appendChild(a2);
-  nav3.appendChild(a3);
-  nav4.appendChild(a4);
-  nav5.appendChild(a5);
+  liS[0].appendChild(links[0]);
+  liS[1].appendChild(links[1]);
+  liS[2].appendChild(links[2]);
+  liS[3].appendChild(links[3]);
+  liS[4].appendChild(links[4]);
   // Append Li On Ul
-  navUl.append(...apendLi);
+  navUl.append(...liS);
   // Append Ul On Parent(Nav)
   parent.appendChild(navUl);
   // Append Parent(Nav) On Header
   document.querySelector("header").appendChild(parent);
   // Click on the icon to Appear Navigation
+  let one_three = document.querySelectorAll(".one-three");
   function blockAnone() {
-    parent.style.transform == "translateX(-768px)" ? parent.style.transform = "translateX(0)" : parent.style.transform = "translateX(-768px)";
+    if (parent.style.transform == "translateX(-768px)") {
+      parent.style.transform = "translateX(0)";
+      one_three.forEach(ele =>  ele.style.transform = "translateX(-43%)");
+    } else {
+      parent.style.transform = "translateX(-768px)";
+      one_three.forEach(ele =>  ele.style.transform = "translateX(0%)");
+    }
+     
   }
-  leftIcone.onclick = blockAnone;
+  leftIcone.onclick = blockAnone; 
 }
 
 // Scroll To Top Website
@@ -204,4 +203,22 @@ export function footer() {
   let footer = document.querySelector("footer");
   footer.style.backgroundColor = "var(--mane-color-opacty)";
   footer.appendChild(containerDiv);
+}
+
+// create Bocks
+export function createBocks(srcImage, textParagraph, scrLink, textDawnload, icon) {
+  let bocks = document.querySelector("article.articles .container .bocks");
+  bocks.innerHTML +=
+  `<div class="bock">
+    <div class="images">
+      <img src=${srcImage}>
+    </div>
+    <div class="text">
+      <p>${textParagraph}</p>
+      <a class="download" href=${scrLink} target="_blanck">
+        ${textDawnload}
+        <i class="${icon}"></i>
+      </a>
+    </div>
+  </div>`;
 }

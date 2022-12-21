@@ -379,7 +379,7 @@ header {
     top: 30%;
     left: 0px;
     background-color: var(--mane-color-opacty);
-    padding: 0px 5px 0 0;
+    padding: 0px 0 0 5px;
     border-radius: 5px;
     border-bottom: 3px solid #eee;
     z-index: 100;
