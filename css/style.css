@@ -205,9 +205,7 @@ header .container .head .logo a {
     color: white;
     cursor: pointer;
 }
-header .container .head .logo a h3 {
-    width: 100px;
-}
+
 header .container .head nav ul {
     display: flex;
 }
@@ -288,34 +286,33 @@ section p .sp {
 }
 @media (min-width: 769px) {
     section .infromition-show {
-    position: relative;
-    display: flex;
-    bottom: -50px;
-    margin: 30px 0 100px;
-}
-section .infromition-show .data {
-    width: 25%;
-    display: flex;
-    justify-content: space-around;
-}
-section .infromition-show .data:not(:last-child) {
+        display: flex;
+        margin-top: 30px;
+    }
+    section .infromition-show .data {
+        width: 25%;
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+    }
+    section .infromition-show .data:not(:last-child) {
         border-left: 2px solid #00000012;
-}
-section .infromition-show .data a {
-    font-size: 1.25rem;
-    font-weight: bold;
-    position: absolute;
-    top: -19px;
-    text-shadow: 0px 0px 20px;
-    color: var(--mane-color);        
-}
-section .infromition-show .data img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    border: 5px solid white;
-    outline: 2px solid #00000012;
-}
+    }
+    section .infromition-show .data a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        position: absolute; 
+        bottom: 75px;
+        text-shadow: 0px 0px 20px;
+        color: var(--mane-color);        
+    }
+    section .infromition-show .data img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        border: 5px solid white;
+        outline: 2px solid #00000012;
+    }
 }
 /* End Section */
 

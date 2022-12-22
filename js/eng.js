@@ -4,7 +4,6 @@ navigation('../index.html', "Home", '#visuals', "Visuals", '#bock', "Bock", 'whi
 
 // Videos Counte
 let videos = document.querySelector(".videos");
-
 getVideo('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC13KPGZ_OhiRRwXwTZuWG9g&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg').then((result) => {
   for (let i = 0; i <= result.length; i++) {
     let box = document.createElement("div"); 
