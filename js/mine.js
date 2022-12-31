@@ -10,7 +10,6 @@ getVideo(
   for (let i = 0; i <= result.length; i++) {
     let boxAllTest = document.createElement("div");
     boxAllTest.className = "box";
-    boxAllTest.style.margin = "10px";
     let iframe = document.createElement("iframe");
     iframe.allowFullscreen = "allowFullscreen";
     iframe.src = `https://www.youtube.com/embed/${result[i].id.videoId}?rel=0`;
