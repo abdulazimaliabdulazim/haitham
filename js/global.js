@@ -5,7 +5,7 @@ export function header(homeSrc, logoName, homeName, visuals, visualsName, bock, 
     <div class="head">
       <div class="logo">
           <a href='${homeSrc}'>
-          <h3>${logoName}</h3>            
+          <h3>${logoName}</h3>
           </a>
       </div>
       <nav>

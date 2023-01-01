@@ -356,12 +356,14 @@ main.visuals .iconVideo i {
 
 /* Start Article Book */
 article.articles {
-    position: relative;
     background-image: url(../images/image6.jpg);
     background-repeat: repeat;
     background-size: cover;
     background-attachment: fixed;
     margin-top: var(--margin-top);
+}
+article.articles .container {
+    position: relative;
 }
 /* Start Bock */
 article.articles .container .bocks {
@@ -415,7 +417,10 @@ article.articles .container .bocks .bock .text a.download:hover {
     color: var(--mane-color-alt);
 }
 /* End Bock */
-/* Filter */
+/* Start Filter */
+article.articles .container .parent .filter {
+    margin-top: 42px;
+}
 article.articles .container .parent .filter ul {
     display: flex;
     background-color: white;
@@ -436,11 +441,11 @@ article.articles .container .parent .filter ul li {
 article.articles .container .parent .filter ul li:not(.active) {
     border-left: 3px solid var(--mane-color-opacty);
 }
-/* Filter */
-/* Language */
+/* End Filter */
+/* Start Language */
 article.articles .container .parent .langw {
     position: absolute;
-    margin-top: 8px;
+    top: 0;
 }
 article.articles .container .parent .langw ul {
     width: 136px;
@@ -464,7 +469,7 @@ article.articles .container .parent .langw ul li {
 article.articles .container .parent .langw ul li:hover {
     background-color: var(--mane-color);
 }
-/* Language */
+/* End Language */
 @media (max-width: 767px) {
     .articles .bocks .bock {
         margin: 20px auto;
