@@ -135,7 +135,7 @@ export function scrollToTop() {
 
 // Videos Mine
 export async function getVideo(apiLink) {
-  let key = ["AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY"];
+  let key = ['AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY', 'AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8', 'AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg'];
   let count = 50;
   try {
     let result = await fetch(apiLink);
