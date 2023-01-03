@@ -21,17 +21,31 @@ getVideo(
 // Scroll Video
 let boxAll = document.querySelector(".box-all");
 let iconVideo = document.querySelector(".iconVideo");
+let count = 0;
 
 // Scroll Video Left
 let iconVideoLeft = document.createElement("i");
 iconVideoLeft.className = "fa-solid fa-caret-left";
 iconVideo.appendChild(iconVideoLeft);
-iconVideoLeft.onclick = () => boxAll.style.transform += `translateX(-300px)`;
+
+iconVideoLeft.onclick = function () {
+  if (window.localStorage.getItem("count") != 0) {
+      --count;
+      window.localStorage.setItem("count", count);
+      boxAll.style.transform += `translateX(-300px)`;
+  }
+}
+
 // Scroll Video Right
 let iconVideoRight = document.createElement("i");
 iconVideoRight.className = "fa-solid fa-caret-right";
 iconVideo.appendChild(iconVideoRight);
-iconVideoRight.onclick = () => boxAll.style.transform += `translateX(300px)`;
+
+iconVideoRight.onclick = function () {
+  ++count;
+  window.localStorage.setItem("count", count);
+  boxAll.style.transform += `translateX(300px)`;
+}
 
 
 // (Page Mine)
