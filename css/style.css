@@ -317,6 +317,9 @@ section p .sp {
 /* End Section */
 
 /* Start Video */
+main.visuals {
+    overflow: hidden;
+}
 main.visuals .box-all {
     display: flex;
     transition: all 0.5s ease 0s;
