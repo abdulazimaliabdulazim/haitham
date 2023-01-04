@@ -424,3 +424,32 @@ header .container .head nav ul li a:hover::before {
     border-radius: 5px;
 }
 /* End Social Media */
+
+
+/* Start Click In Genarators videos */
+@media (min-width: 767px) {
+    .clickButton {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .clickButton {
+        display: flex;
+        justify-content: center;
+        background-color: #ddd;
+        padding-top: 15px;
+        padding-bottom: 50px;
+    }
+    .clickButton div {
+        padding: 10px 15px;
+        font-size: 20px;
+        border-left: 1px solid #0000003b;
+        cursor: pointer;
+        transition: all 0.5s ease 0s;
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+}
+}
+/* End Click In Genarators videos */
