@@ -1,8 +1,7 @@
 import {header, navigation, getVideo, activeFunction} from "./global.js";
 header("../index.html","هيثم طلعت", "الرئيسية", "#visuals", "المرئيات", "../#bock", "الكتب","../#", "المقالات", "../html/indexEng.html", "English");
 navigation('../index.html', "الرئيسية", '../#visuals', "المرئيات", '../#bock', "الكتب", '../html/whit.html', 'من نحن', '../html/indexEng.html', "English");
-
-function propertyBox(parentBox, titleP, scrVideo, titleVideo) {
+function propertyBox(parentBox, titleP, scrVideo) {
   parentBox.className = "box"; 
   let createP = document.createElement("p");
   let repoNameAll = document.createTextNode(titleP);
@@ -18,7 +17,7 @@ function propertyBox(parentBox, titleP, scrVideo, titleVideo) {
       gyroscope; picture-in-picture"allowfullscreen>
     </iframe>`;
 }
-
+let viId = document.querySelectorAll(".visuals .box-all .box");
 // Videos Counte
 let videos = document.querySelector(".videos");
 getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
@@ -29,57 +28,8 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
       yield videos.appendChild(box);
     }
   }
-
-  let viId = document.querySelectorAll(".visuals .box-all .box");
-  let buttonChild = document.querySelectorAll(".clickButton div");
-
   viId.forEach((ele) => {
       ele.addEventListener("click", (e) => {
-        
-          let parent = document.createElement("div");
-          parent.className = "parentDivOnSpan";
-          parent.style.cssText = "display: flex; flex-direction: column; position: relative;";
-          let oneChildDiv = document.createElement("span");
-          let twoChildDiv = document.createElement("span");
-          let texOneChildDiv = document.createTextNode("الأحدث");
-          oneChildDiv.className = "active"
-          oneChildDiv.id = "viewCount";
-          let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
-          twoChildDiv.className = "newAll";
-          twoChildDiv.id = "searchSortUnspecified";
-          oneChildDiv.appendChild(texOneChildDiv);
-          twoChildDiv.appendChild(texTwoChildDiv);
-          parent.appendChild(oneChildDiv);
-          parent.appendChild(twoChildDiv);
-          ele.after(parent);
-          let spanArray = [oneChildDiv, twoChildDiv];
-
-          spanArray.forEach((a) => {
-            
-            a.addEventListener("click", (e) => {
-              videos.innerHTML = "";
-              spanArray.forEach((a) => a.classList.remove("active"));
-              e.currentTarget.classList.add("active");
-              
-              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=${a.id}&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
-              function* generatChanlleNew() {
-                for (let i = 0; i <= result.length; i++) {
-                  let box = document.createElement("div"); 
-                  propertyBox(box, result[i].snippet.title, result[i].id.videoId, result[i].snippet.title);
-                  yield videos.appendChild(box);
-                }
-              }
-              // Start Click In Genarators videos
-              const generatorNew = generatChanlleNew();
-              for (let i = 0; i <= 9; i++) {
-                generatorNew.next().value;
-              }
-              clickOnBoxCreateVideos(generatorNew);
-            });
-              
-            });
-          });
-        
         videos.innerHTML = "";
         activeFunction(viId);
         getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
@@ -99,13 +49,12 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
         });
       });
   });
-
   // Genarat Mine Videos
   const generatOfMine = generateSomething();
   for (let i = 0; i <= 9; i++) {
     generatOfMine.next().value;
   }
-
+  let buttonChild = document.querySelectorAll(".clickButton div");
   function clickOnBoxCreateVideos(generatValueFoFunction) {
     buttonChild.forEach((a) => {
         a.addEventListener("click", (e) => {
@@ -131,27 +80,49 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
   }
   clickOnBoxCreateVideos(generatOfMine);
 });
-
-
-// function test(thisClick) {
-//   let parent = document.createElement("div");
-//   parent.className = "parentDivOnSpan";
-//   parent.style.cssText = "display: flex; flex-direction: column; position: relative;";
-//   let oneChildDiv = document.createElement("span");
-//   let twoChildDiv = document.createElement("span");
-//   let texOneChildDiv = document.createTextNode("الأحدث");
-//   oneChildDiv.className = "active"
-//   oneChildDiv.id = "videosViewCount";
-//   let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
-//   twoChildDiv.className = "newAll";
-//   twoChildDiv.id = "videosSearchSortUnspecified";
-//   oneChildDiv.appendChild(texOneChildDiv);
-//   twoChildDiv.appendChild(texTwoChildDiv);
-//   parent.appendChild(oneChildDiv);
-//   parent.appendChild(twoChildDiv);
-//   thisClick.after(parent);
-//   let spanArray = [oneChildDiv, twoChildDiv];
-//   activeFunction(spanArray);
-// }
-
-
+function test() {
+  let parent = document.createElement("div");
+  parent.className = "parentDivOnSpan";
+  let oneChildDiv = document.createElement("span");
+  oneChildDiv.className = "active"
+  oneChildDiv.id = "date";
+  let texOneChildDiv = document.createTextNode("الأحدث");
+  oneChildDiv.title = "الأحدث";
+  oneChildDiv.appendChild(texOneChildDiv);
+  let spanArray = [oneChildDiv, twoChildDiv]; // --------------
+  let twoChildDiv = document.createElement("span");
+  twoChildDiv.className = "newAll";
+  twoChildDiv.id = "viewCount";
+  let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
+  twoChildDiv.title = "الأكثر شهرة";
+  twoChildDiv.appendChild(texTwoChildDiv);
+  parent.append(...spanArray);
+  viId.forEach((box) => {
+    box.addEventListener("click", () => {
+      box.after(parent);
+    })
+  })
+  spanArray.forEach((span) => {
+    span.addEventListener("click", (e) => {
+      videos.innerHTML = "";
+      activeFunction(spanArray);
+      getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${e.id}&maxResults=50&order=${e.id}&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
+      function* generatChanlleNew() {
+        for (let i = 0; i <= result.length; i++) {
+          let box = document.createElement("div"); 
+          propertyBox(box, result[i].snippet.title, result[i].id.videoId, result[i].snippet.title);
+          yield videos.appendChild(box);
+        }
+      }
+      // Start Click In Genarators videos
+      const generatorNew = generatChanlleNew();
+      for (let i = 0; i <= 9; i++) {
+        generatorNew.next().value;
+      }
+      clickOnBoxCreateVideos(generatorNew);
+    });
+    });
+  });
+}
+test();
+// Total Code 127
