@@ -61,7 +61,7 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
               spanArray.forEach((a) => a.classList.remove("active"));
               e.currentTarget.classList.add("active");
               
-              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=rating&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
+              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=${a.id}&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
               function* generatChanlleNew() {
                 for (let i = 0; i <= result.length; i++) {
                   let box = document.createElement("div"); 
