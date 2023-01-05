@@ -452,3 +452,32 @@ header .container .head nav ul li a:hover::before {
   }
 }
 /* End Click In Genarators videos */
+
+
+/* لم يتم انهائه */
+
+.parentDivOnSpan .newAll,
+.parentDivOnSpan #videosViewCount {
+    width: fit-content;
+    background-color: #ddd;
+    padding: 8px 5px;
+    color: var(--mane-color-alt);
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.parentDivOnSpan .newAll::before {
+  content: "\e098";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 10px;
+  margin-right: 20px;
+}
+.parentDivOnSpan #videosViewCount::before {
+  content: "\e098";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-left: 10px;
+  margin-right: 20px;
+}
