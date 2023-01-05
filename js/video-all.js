@@ -21,7 +21,7 @@ function propertyBox(parentBox, titleP, scrVideo, titleVideo) {
 
 // Videos Counte
 let videos = document.querySelector(".videos");
-getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
   function* generateSomething() {
     for (let i = 0; i <= result.length; i++) {
       let box = document.createElement("div"); 
@@ -61,7 +61,7 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
               spanArray.forEach((a) => a.classList.remove("active"));
               e.currentTarget.classList.add("active");
               
-              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=rating&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=rating&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
               function* generatChanlleNew() {
                 for (let i = 0; i <= result.length; i++) {
                   let box = document.createElement("div"); 
@@ -82,7 +82,7 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
         
         videos.innerHTML = "";
         activeFunction(viId);
-        getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+        getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`).then((result) => {
           function* generatChanlle() {
             for (let i = 0; i <= result.length; i++) {
               let box = document.createElement("div"); 
