@@ -457,7 +457,7 @@ header .container .head nav ul li a:hover::before {
 /* لم يتم انهائه */
 
 .parentDivOnSpan .newAll,
-.parentDivOnSpan #videosViewCount {
+.parentDivOnSpan #viewCount {
     width: fit-content;
     background-color: #ddd;
     padding: 8px 5px;
@@ -474,7 +474,7 @@ header .container .head nav ul li a:hover::before {
   padding-left: 10px;
   margin-right: 20px;
 }
-.parentDivOnSpan #videosViewCount::before {
+.parentDivOnSpan #viewCount::before {
   content: "\e098";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;

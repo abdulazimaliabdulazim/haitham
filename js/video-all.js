@@ -35,7 +35,51 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
 
   viId.forEach((ele) => {
       ele.addEventListener("click", (e) => {
-        test(ele);
+        
+          let parent = document.createElement("div");
+          parent.className = "parentDivOnSpan";
+          parent.style.cssText = "display: flex; flex-direction: column; position: relative;";
+          let oneChildDiv = document.createElement("span");
+          let twoChildDiv = document.createElement("span");
+          let texOneChildDiv = document.createTextNode("الأحدث");
+          oneChildDiv.className = "active"
+          oneChildDiv.id = "viewCount";
+          let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
+          twoChildDiv.className = "newAll";
+          twoChildDiv.id = "searchSortUnspecified";
+          oneChildDiv.appendChild(texOneChildDiv);
+          twoChildDiv.appendChild(texTwoChildDiv);
+          parent.appendChild(oneChildDiv);
+          parent.appendChild(twoChildDiv);
+          ele.after(parent);
+          let spanArray = [oneChildDiv, twoChildDiv];
+
+          spanArray.forEach((a) => {
+            
+            a.addEventListener("click", (e) => {
+              videos.innerHTML = "";
+              spanArray.forEach((a) => a.classList.remove("active"));
+              e.currentTarget.classList.add("active");
+              
+              getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=rating&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
+              function* generatChanlleNew() {
+                for (let i = 0; i <= result.length; i++) {
+                  let box = document.createElement("div"); 
+                  propertyBox(box, result[i].snippet.title, result[i].id.videoId, result[i].snippet.title);
+                  yield videos.appendChild(box);
+                }
+              }
+              // Start Click In Genarators videos
+              const generatorNew = generatChanlleNew();
+              for (let i = 0; i <= 9; i++) {
+                generatorNew.next().value;
+              }
+              clickOnBoxCreateVideos(generatorNew);
+            });
+              
+            });
+          });
+        
         videos.innerHTML = "";
         activeFunction(viId);
         getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${ele.id}&maxResults=50&order=date&key=AIzaSyDQ8lmdZuL8HUTioJPslw7aDokVL5vFRyg`).then((result) => {
@@ -89,24 +133,25 @@ getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelI
 });
 
 
-function test(thisClick) {
-  let parent = document.createElement("div");
-  parent.className = "parentDivOnSpan";
-  parent.style.cssText = "display: flex; flex-direction: column; position: relative;";
-  let oneChildDiv = document.createElement("span");
-  let twoChildDiv = document.createElement("span");
-  let texOneChildDiv = document.createTextNode("الأحدث");
-  oneChildDiv.className = "active"
-  oneChildDiv.id = "videosViewCount";
-  let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
-  twoChildDiv.className = "newAll";
-  twoChildDiv.id = "videosSearchSortUnspecified";
-  oneChildDiv.appendChild(texOneChildDiv);
-  twoChildDiv.appendChild(texTwoChildDiv);
-  parent.appendChild(oneChildDiv);
-  parent.appendChild(twoChildDiv);
-  thisClick.after(parent);
-  let spanArray = [oneChildDiv, twoChildDiv];
-  activeFunction(spanArray);
-}
+// function test(thisClick) {
+//   let parent = document.createElement("div");
+//   parent.className = "parentDivOnSpan";
+//   parent.style.cssText = "display: flex; flex-direction: column; position: relative;";
+//   let oneChildDiv = document.createElement("span");
+//   let twoChildDiv = document.createElement("span");
+//   let texOneChildDiv = document.createTextNode("الأحدث");
+//   oneChildDiv.className = "active"
+//   oneChildDiv.id = "videosViewCount";
+//   let texTwoChildDiv = document.createTextNode("الأكثر شهرة");
+//   twoChildDiv.className = "newAll";
+//   twoChildDiv.id = "videosSearchSortUnspecified";
+//   oneChildDiv.appendChild(texOneChildDiv);
+//   twoChildDiv.appendChild(texTwoChildDiv);
+//   parent.appendChild(oneChildDiv);
+//   parent.appendChild(twoChildDiv);
+//   thisClick.after(parent);
+//   let spanArray = [oneChildDiv, twoChildDiv];
+//   activeFunction(spanArray);
+// }
+
 
