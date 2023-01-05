@@ -41,7 +41,7 @@ ul {
     padding: 0
 }
 .active {
-    background-color: var(--mane-color-opacty);
+    background-color: var(--mane-color-opacty) !important;
 }
 /* Small */
 @media (min-width: 768px) {
@@ -373,8 +373,8 @@ article.articles .container .bocks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--margin-all);
-    margin-top: 60px;
     margin-bottom: var(--margin-bottom);
+    margin-top: var(--margin-top);
 }
 article.articles .container .bocks .bock {
     display: flex;
