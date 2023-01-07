@@ -8,7 +8,7 @@ let parent = document.createElement("div");
 let parentVideos = document.querySelector(".videos");
 
 // Function Videos Mine Dr Haitham
-getVideo('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8', parentVideos, buttonChild);
+getVideo('https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8', parentVideos, buttonChild, "yas", 'yas');
 
 // Function  Active Class
 activeFunction(channelId);
@@ -17,13 +17,13 @@ channelId.forEach((box) => {
   box.addEventListener("click", (e) => {
     box.after(parent);
     parentVideos.innerHTML = "";
-    test();
+    createTwoSpanVideos();
     // Function Videos Channels
-    getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${box.id}&maxResults=50&order=date&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8`, parentVideos, buttonChild);
+    getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${box.id}&maxResults=50&order=date&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8`, parentVideos, buttonChild, "yas", 'yas');
   });
 });
 
-function test() {
+function createTwoSpanVideos() {
   parent.className = "parentDivOnSpan";
   let oneChildDiv = document.createElement("span");
   oneChildDiv.className = "active"
@@ -47,10 +47,9 @@ function test() {
         span.addEventListener("click", () => {
           parentVideos.innerHTML = "";
           activeFunction(spanArray);
-          getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${box.id}&maxResults=50&order=${span.id}&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8`,parentVideos, buttonChild);
+          getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${box.id}&maxResults=50&order=${span.id}&key=AIzaSyDDsLuqe_Gc10hV6RJ3_QBFhjW5blGZhW8`,parentVideos, buttonChild, "yas", 'yas');
         });
       });
     });
   });
 }
-// Total Code 127

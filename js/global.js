@@ -132,8 +132,9 @@ export function scrollToTop() {
     });
   };
 }
+
 // Videos Mine
-export async function getVideo(apiLink, parentVideos, buttonChild) {
+export async function getVideo(apiLink, parentVideos, buttonChild, paraghrahVideos = "yas", topScroll = 'yas') {
   try {
     let result = await fetch(apiLink);
     let jsDataFour = await result.json();
@@ -141,42 +142,44 @@ export async function getVideo(apiLink, parentVideos, buttonChild) {
       for (let i = 0; i <= jsDataFour.items.length; i++) {
         let box = document.createElement("div"); 
         box.className = "box"; 
-        let createP = document.createElement("p");
-        let repoNameAll = document.createTextNode(jsDataFour.items[i].snippet.title);
-        createP.appendChild(repoNameAll);
-        box.appendChild(createP);
+        if (paraghrahVideos == "yas") {
+          let createP = document.createElement("p");
+          let repoNameAll = document.createTextNode(jsDataFour.items[i].snippet.title);
+          createP.appendChild(repoNameAll);
+          box.appendChild(createP);
+        }
         box.innerHTML +=
           `<iframe
-            width="95%"
-            height="170"
             src="https://www.youtube.com/embed/${jsDataFour.items[i].id.videoId}?rel=0"
             title="${jsDataFour.items[i].snippet.title}" frameborder="0"allow="accelerometer;
             autoplay; clipboard-write; encrypted-media;
             gyroscope; picture-in-picture"allowfullscreen>
           </iframe>`;
-          yield parentVideos.appendChild(box);
-        }
+        yield parentVideos.appendChild(box);
+      }
     }
-    const generator = generatChanlle();
+    let generator = generatChanlle();
     for (let i = 0; i <= 9; i++) {
       generator.next().value;
     }
-    function clickOnBoxCreateVideos(buttonChild) {
+    function clickOnBoxCreateVideos() {
       buttonChild.forEach((a) => {
         a.addEventListener("click", (e) => {
           // Remove Class Active
           buttonChild.forEach((a) => a.classList.remove("active"));
           // Add Class Active
           e.currentTarget.classList.add("active");
-          // Add Events No Click
-          a.style.cssText = "pointer-events: none";
-          parentVideos.innerHTML = "";
-          // Scrolling To Top
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
+          if (topScroll == "yas") {
+            // Add Events No Click
+            a.style.cssText = "pointer-events: none";
+            parentVideos.innerHTML = "";
+            // Scrolling To Top
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }
           // Add Videos On Click 10 Number
           for (let i = 0; i <= 9; i++) {
             generator.next().value;
@@ -189,6 +192,7 @@ export async function getVideo(apiLink, parentVideos, buttonChild) {
     console.log(error);
   }
 }
+
 // Class Active
 export function activeFunction(eleActive) {
   eleActive.forEach((a) => {

@@ -2,53 +2,29 @@ import {header, navigation, getVideo, activeFunction, createBocks} from "./globa
 header("index.html","هيثم طلعت", "الرئيسية", "#visuals", "المرئيات", "#bock", "الكتب","#", "المقالات", "html/indexEng.html", "English"); // One Order
 navigation('index.html', "الرئيسية", '#visuals', "المرئيات", '#bock', "الكتب", 'html/whit.html', 'من نحن', 'html/indexEng.html', "English"); // Four Order
 
-// Videos Mine
-getVideo(
-  `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`
-).then((result) => {
-  let boxAll = document.querySelector("main.visuals .box-all");
-  for (let i = 0; i <= result.length; i++) {
-    let boxAllTest = document.createElement("div");
-    boxAllTest.className = "box";
-    let iframe = document.createElement("iframe");
-    iframe.allowFullscreen = "allowFullscreen";
-    iframe.src = `https://www.youtube.com/embed/${result[i].id.videoId}?rel=0`;
-    boxAllTest.appendChild(iframe);
-    boxAll.appendChild(boxAllTest);
-  }
-});
-
 // Scroll Video
 let boxAll = document.querySelector(".box-all");
-let iconVideo = document.querySelector(".iconVideo");
+let iconVideoLeft = document.querySelector(".iconLeft");
+let iconVideoRight = document.querySelector(".iconRight");
+let iconsScroll = [iconVideoLeft, iconVideoRight];
 let count = 0;
 
-// Scroll Video Left
-let iconVideoLeft = document.createElement("i");
-iconVideoLeft.className = "fa-solid fa-caret-left";
-iconVideo.appendChild(iconVideoLeft);
+getVideo(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCLj8UFOcdFrvlh24Lw7jrgA&maxResults=50&order=date&key=AIzaSyA6Bn7dJHlf7G8IxR7I_ZPCP_Ew-83sqkY`, boxAll, iconsScroll, "noParaghrahVideos", "noScroll");
 
-iconVideoLeft.onclick = function () {
+iconVideoLeft.onclick = () => {
   if (window.localStorage.getItem("count") != 0) {
-      --count;
-      window.localStorage.setItem("count", count);
-      boxAll.style.transform += `translateX(-300px)`;
+    --count;
+    window.localStorage.setItem("count", count);
+    boxAll.style.transform += `translateX(-300px)`;
   }
 }
 
-// Scroll Video Right
-let iconVideoRight = document.createElement("i");
-iconVideoRight.className = "fa-solid fa-caret-right";
-iconVideo.appendChild(iconVideoRight);
-
-iconVideoRight.onclick = function () {
+iconVideoRight.onclick = () => {
   ++count;
   window.localStorage.setItem("count", count);
   boxAll.style.transform += `translateX(300px)`;
 }
 
-
-// (Page Mine)
 // Json Bocks
 let bocks = document.querySelector("article.articles .container .bocks");
 const filt = document.querySelectorAll(".articles .container .filter li");
