@@ -357,8 +357,6 @@ main .box-all .info .parentDivOnSpan #viewCount::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
-
-
 .info .box:hover,
 .info .active {
   background-color: var(--mane-color);
